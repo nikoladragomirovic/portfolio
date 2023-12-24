@@ -21,7 +21,7 @@ const Window = () => {
   };
 
   return (
-    <div className="w-full h-screen flex flex-row justify-between items-center px-2 py-16 bg-indigo-100">
+    <div className="w-full h-screen flex flex-row justify-between items-center px-2 py-10 bg-indigo-100">
       <BiSolidLeftArrow
         className={`text-6xl text-indigo-400 bg-gradient-to-r from-indigo-100 to-indigo-300 mr-4 rounded-r-md p-2 hover:text-7xl hover:mr-6 duration-300 ${
           animateLeftArrow ? "animate-jump" : ""
