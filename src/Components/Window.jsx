@@ -3,6 +3,7 @@ import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 import { useLocation, Routes, Route, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import Hero from "./Hero";
 
 const Window = () => {
   const location = useLocation();
@@ -39,7 +40,7 @@ const Window = () => {
       />
       <div className="w-full h-full overflow-hidden rounded-lg relative flex items-center justify-center p-8 pt-16 outline outline-2 outline-indigo-200">
         <div className="bg-[url('https://cdn.dribbble.com/users/5520917/screenshots/15604939/media/777c7c72d99b1335909d6f7d6e2a974c.gif')] blur-3xl scale-125 opacity-75 w-full h-full bg-cover absolute"></div>
-        <div className="w-full h-full bg-indigo-50 rounded-lg relative shadow-[0_0_30px] shadow-indigo-600 outline outline-2 outline-indigo-200 overflow-hidden">
+        <div className="w-full h-full bg-indigo-50 rounded-lg relative shadow-[0_0_30px] shadow-indigo-600 outline outline-2 outline-indigo-200 overflow-auto">
           <Routes>
             <Route
               path="/"
@@ -56,9 +57,7 @@ const Window = () => {
                     exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
                     transition={{ duration: 0.4 }}
                   >
-                    <p className="w-full h-full flex items-center justify-center text-black">
-                      HOME
-                    </p>
+                    <Hero />
                   </motion.div>
                 </AnimatePresence>
               }
