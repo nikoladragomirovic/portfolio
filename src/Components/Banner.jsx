@@ -1,62 +1,101 @@
-import React from "react";
+import React, { useRef } from "react";
 import { HiAcademicCap, HiCode } from "react-icons/hi";
+import { useState, useEffect } from "react";
+import Sparkles from "./Sparkles";
+import { useInView, motion, useAnimation } from "framer-motion";
 
 const Banner = () => {
+  const bannerAnimation = useAnimation();
+  const infoAnimation = useAnimation();
+  const banner = useRef(null);
+  const info = useRef(null);
+  const infoInView = useInView(info);
+  const bannerInView = useInView(banner);
+
+  const bannerVariant = {
+    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 0 },
+  };
+
+  const infoVariant = {
+    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, scale: 0 },
+  };
+
+  useEffect(() => {
+    if (bannerInView) {
+      bannerAnimation.start("visible");
+    }
+    if (infoInView) {
+      infoAnimation.start("visible");
+    }
+  }, [bannerAnimation, bannerInView, infoAnimation, infoInView]);
+
   return (
     <>
-      <div className="flex items-center p-36 justify-center rounded-3xl bg-indigo-200 my-32">
-        <span className="flex items-center justify-center flex-col">
-          <h1 className="text-indigo-500 font-bold font-poppins text-3xl text-center">
-            I LIKE TO MAKE THINGS LOOK
-          </h1>
-          <span className=" inline-block relative">
-            <span
-              className={`block absolute w-6 top-6 left-0 fill-indigo-500 animate-ping animate-duration-[1200ms] animate-delay-75`}
-            >
-              <svg viewBox="0 0 160 160">
-                <path d="M80 0C80 0 84.2846 41.2925 101.496 58.504C118.707 75.7154 160 80 160 80C160 80 118.707 84.2846 101.496 101.496C84.2846 118.707 80 160 80 160C80 160 75.7154 118.707 58.504 101.496C41.2925 84.2846 0 80 0 80C0 80 41.2925 75.7154 58.504 58.504C75.7154 41.2925 80 0 80 0Z" />
-              </svg>
-            </span>
-            <span
-              className={`block absolute w-10 top-6 left-64 fill-indigo-500 animate-ping animate-duration-1000 animate-delay-150`}
-            >
-              <svg viewBox="0 0 160 160">
-                <path d="M80 0C80 0 84.2846 41.2925 101.496 58.504C118.707 75.7154 160 80 160 80C160 80 118.707 84.2846 101.496 101.496C84.2846 118.707 80 160 80 160C80 160 75.7154 118.707 58.504 101.496C41.2925 84.2846 0 80 0 80C0 80 41.2925 75.7154 58.504 58.504C75.7154 41.2925 80 0 80 0Z" />
-              </svg>
-            </span>
-            <span
-              className={`block absolute w-8 top-32 left-32 fill-indigo-500 animate-ping`}
-            >
-              <svg viewBox="0 0 160 160">
-                <path d="M80 0C80 0 84.2846 41.2925 101.496 58.504C118.707 75.7154 160 80 160 80C160 80 118.707 84.2846 101.496 101.496C84.2846 118.707 80 160 80 160C80 160 75.7154 118.707 58.504 101.496C41.2925 84.2846 0 80 0 80C0 80 41.2925 75.7154 58.504 58.504C75.7154 41.2925 80 0 80 0Z" />
-              </svg>
-            </span>
-            <span>
-              <h1 className="text-indigo-500 my-10 font-rubikMaps text-9xl text-center">
-                NICE
-              </h1>
-            </span>
-          </span>
-          <h1 className="text-indigo-700 font-light font-poppins text-2xl text-center">
-            Or at least what i view as nice
-          </h1>
-        </span>
-      </div>
-      <div className="flex flex-col items-start justify-start">
-        <span className="text-lg font-poppins text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center">
+      <div className="flex flex-col h-[80vh] items-center w-1/2 justify-center">
+        <motion.div
+          variants={infoVariant}
+          initial="hidden"
+          animate={infoAnimation}
+          transition={{ duration: 1 }}
+          className="text-lg font-poppins text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
+        >
           <HiAcademicCap className=" text-5xl text-indigo-400 mb-4" />
           <p>
             Computing & Automation student at the 'Faculty of Technical Sciences
             in Novi Sad'
           </p>
-        </span>
-        <span className="text-lg font-poppins mt-16 text-indigo-700 font-light flex flex-col items-center justify-center w-full mb-32 px-10 text-center">
+        </motion.div>
+        <motion.div
+          variants={infoVariant}
+          initial="hidden"
+          animate={infoAnimation}
+          transition={{ duration: 1.5 }}
+          className="text-lg font-poppins mt-16 text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
+        >
           <HiCode className=" text-5xl text-indigo-400 mb-4" />
           <p>
             Knows his way around the terminal, can build you a custom linux
-            kernel, but find passion in frontend & UI/UX design.
+            kernel, but finds passion in frontend & UI/UX design.
           </p>
-        </span>
+        </motion.div>
+        <motion.div
+          ref={info}
+          variants={infoVariant}
+          initial="hidden"
+          animate={infoAnimation}
+          transition={{ duration: 2 }}
+          className="text-lg font-poppins mt-16 text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
+        >
+          <HiCode className=" text-5xl text-indigo-400 mb-4" />
+          <p>
+            Knows his way around the terminal, can build you a custom linux
+            kernel, but finds passion in frontend & UI/UX design.
+          </p>
+        </motion.div>
+      </div>
+      <div className="h-[80vh] flex items-center justify-center rounded-3xl animate-fade-up">
+        <motion.div
+          ref={banner}
+          variants={bannerVariant}
+          initial="hidden"
+          animate={bannerAnimation}
+          transition={{ duration: 1 }}
+          className="flex items-center justify-center flex-col my-16"
+        >
+          <h1 className="text-indigo-500 font-bold font-poppins text-5xl text-center">
+            I LIKE TO MAKE THINGS LOOK
+          </h1>
+          <Sparkles>
+            <h1 className="text-indigo-500 my-36 font-rubikMaps text-9xl text-center">
+              NICE
+            </h1>
+          </Sparkles>
+          <h1 className="text-indigo-700 font-light font-poppins text-3xl text-center">
+            Or at least what i view as nice
+          </h1>
+        </motion.div>
       </div>
     </>
   );

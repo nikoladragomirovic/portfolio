@@ -8,7 +8,7 @@ import Hero from "./Hero";
 const Window = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [direction, setDirection] = useState();
+  const [direction, setDirection] = useState(null);
   const [animateLeftArrow, setAnimateLeftArrow] = useState(false);
   const [animateRightArrow, setAnimateRightArrow] = useState(false);
 
@@ -51,9 +51,15 @@ const Window = () => {
                     key="hero"
                     initial={{
                       opacity: 0,
-                      x: direction === 0 ? "100%" : "-100%",
+                      x:
+                        direction == null
+                          ? "0%"
+                          : direction === 0
+                          ? "100%"
+                          : "-100%",
+                      y: direction == null ? "100%" : "0%",
                     }}
-                    animate={{ opacity: 1, x: "0%" }}
+                    animate={{ opacity: 1, x: "0%", y: "0%" }}
                     exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
                     transition={{ duration: 0.4 }}
                   >
@@ -71,9 +77,15 @@ const Window = () => {
                     key="projects"
                     initial={{
                       opacity: 0,
-                      x: direction === 0 ? "100%" : "-100%",
+                      x:
+                        direction == null
+                          ? "0%"
+                          : direction === 0
+                          ? "100%"
+                          : "-100%",
+                      y: direction == null ? "100%" : "0%",
                     }}
-                    animate={{ opacity: 1, x: "0%" }}
+                    animate={{ opacity: 1, x: "0%", y: "0%" }}
                     exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
                     transition={{ duration: 0.4 }}
                   >
@@ -93,9 +105,15 @@ const Window = () => {
                     key="contact"
                     initial={{
                       opacity: 0,
-                      x: direction === 0 ? "100%" : "-100%",
+                      x:
+                        direction == null
+                          ? "0%"
+                          : direction === 0
+                          ? "100%"
+                          : "-100%",
+                      y: direction == null ? "100%" : "0%",
                     }}
-                    animate={{ opacity: 1, x: "0%" }}
+                    animate={{ opacity: 1, x: "0%", y: "0%" }}
                     exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
                     transition={{ duration: 0.4 }}
                   >
