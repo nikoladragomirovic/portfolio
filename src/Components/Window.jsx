@@ -2,15 +2,28 @@ import React from "react";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 import { useLocation, Routes, Route, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Hero from "./Hero";
 
 const Window = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const location = useLocation();
   const navigate = useNavigate();
   const [direction, setDirection] = useState(null);
   const [animateLeftArrow, setAnimateLeftArrow] = useState(false);
   const [animateRightArrow, setAnimateRightArrow] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const pageWheel = {
     "left/": "/contact",
@@ -20,6 +33,22 @@ const Window = () => {
     "right/projects": "/contact",
     "right/contact": "/",
   };
+
+  if (windowWidth < 1075)
+    return (
+      <motion.div
+        key="tip"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+        className={`font-light w-full h-screen flex items-center justify-center text-indigo-800 bg-indigo-100 ${
+          windowWidth < 1075 ? "" : "hidden"
+        } px-10`}
+      >
+        Increase screen width to get the full experience &#128513;
+      </motion.div>
+    );
 
   return (
     <div className="w-full h-screen flex flex-row justify-between items-center px-2 py-10 bg-indigo-100">
@@ -38,7 +67,9 @@ const Window = () => {
           }, 0);
         }}
       />
-      <div className="w-full h-full overflow-hidden rounded-lg relative flex items-center justify-center p-8 pt-16 outline outline-2 outline-indigo-200">
+      <div
+        className={`w-full h-full overflow-hidden rounded-lg relative flex items-center duration-300 justify-center p-8 pt-16 outline outline-2 outline-indigo-200`}
+      >
         <div className="bg-[url('https://cdn.dribbble.com/users/5520917/screenshots/15604939/media/777c7c72d99b1335909d6f7d6e2a974c.gif')] blur-3xl scale-125 opacity-75 w-full h-full bg-cover absolute"></div>
         <div className="w-full h-full bg-indigo-50 rounded-lg relative shadow-[0_0_30px] shadow-indigo-600 outline outline-2 outline-indigo-200 overflow-auto">
           <Routes>

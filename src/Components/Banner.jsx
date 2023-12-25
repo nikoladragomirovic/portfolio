@@ -3,6 +3,7 @@ import { HiAcademicCap, HiCode } from "react-icons/hi";
 import { useState, useEffect } from "react";
 import Sparkles from "./Sparkles";
 import { useInView, motion, useAnimation } from "framer-motion";
+import { FaPaintBrush } from "react-icons/fa";
 
 const Banner = () => {
   const bannerAnimation = useAnimation();
@@ -13,8 +14,8 @@ const Banner = () => {
   const bannerInView = useInView(banner);
 
   const bannerVariant = {
-    visible: { opacity: 1, scale: 1 },
-    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1, y: "0%" },
+    hidden: { opacity: 0, y: "100%" },
   };
 
   const infoVariant = {
@@ -25,19 +26,15 @@ const Banner = () => {
   useEffect(() => {
     if (bannerInView) {
       bannerAnimation.start("visible");
-    } else {
-      bannerAnimation.start("hidden");
     }
     if (infoInView) {
       infoAnimation.start("visible");
-    } else {
-      infoAnimation.start("hidden");
     }
   }, [bannerAnimation, bannerInView, infoAnimation, infoInView]);
 
   return (
     <>
-      <div className="flex flex-col h-[80vh] items-center w-1/2 justify-center">
+      <div className="flex flex-col min-h-[80vh] items-center w-1/2 justify-center">
         <motion.div
           variants={infoVariant}
           initial="hidden"
@@ -60,8 +57,8 @@ const Banner = () => {
         >
           <HiCode className=" text-5xl text-indigo-400 mb-4" />
           <p>
-            Knows his way around the terminal, can build you a custom linux
-            kernel, but finds passion in frontend & UI/UX design.
+            Knows his way around the terminal, can build you a custom PC, or a
+            custom linux kernel.
           </p>
         </motion.div>
         <motion.div
@@ -72,14 +69,14 @@ const Banner = () => {
           transition={{ duration: 2 }}
           className="text-lg font-poppins mt-16 text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
         >
-          <HiCode className=" text-5xl text-indigo-400 mb-4" />
+          <FaPaintBrush className=" text-4xl text-indigo-400 mb-4" />
           <p>
-            Knows his way around the terminal, can build you a custom linux
-            kernel, but finds passion in frontend & UI/UX design.
+            Has a passion for UI/UX design, frontend development, overall just
+            likes making things.
           </p>
         </motion.div>
       </div>
-      <div className="h-[80vh] flex items-center justify-center rounded-3xl animate-fade-up">
+      <div className="min-h-[80vh] flex items-center justify-center rounded-3xl animate-fade-up">
         <motion.div
           ref={banner}
           variants={bannerVariant}
