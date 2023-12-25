@@ -4,14 +4,18 @@ import { useState, useEffect } from "react";
 import Sparkles from "./Sparkles";
 import { useInView, motion, useAnimation } from "framer-motion";
 import { FaPaintBrush } from "react-icons/fa";
+import me from "../Rescources/Me.png";
+import { TfiAngleDown } from "react-icons/tfi";
 
 const Banner = () => {
   const bannerAnimation = useAnimation();
   const infoAnimation = useAnimation();
   const banner = useRef(null);
   const info = useRef(null);
+  const scroll = useRef(null);
   const infoInView = useInView(info);
   const bannerInView = useInView(banner);
+  const scrollOutView = useInView(scroll);
 
   const bannerVariant = {
     visible: { opacity: 1, y: "0%" },
@@ -30,12 +34,45 @@ const Banner = () => {
     if (infoInView) {
       infoAnimation.start("visible");
     }
-  }, [bannerAnimation, bannerInView, infoAnimation, infoInView]);
+  }, [bannerAnimation, bannerInView, infoAnimation, infoInView, scrollOutView]);
 
   return (
-    <>
+    <div className="w-full flex flex-col items-center justify-center bg-indigo-100">
+      <div className="w-full min-h-[85vh] flex flex-col items-center justify-center">
+        <div className="rounded-t-3xl p-6 bg-gradient-to-b from-indigo-400 animate-jump-in animate-duration-1000 animate-delay-200">
+          <img className="max-h-64 rounded-3xl" src={me}></img>
+        </div>
+        <h1 className="text-8xl font-rubikMaps mt-8 text-indigo-400 w-full text-center animate-jump-in animate-duration-1000 animate-delay-500">
+          NIKOLA
+          <br />
+          DRAGOMIROVIĆ
+        </h1>
+        <p className="text-3xl font-poppins mt-3 text-indigo-600 font-light animate-fade-up animate-duration-1000 animate-delay-1000">
+          A wannabe frontend developer & UI/UX engineer
+        </p>
+        <span
+          className={`text-3xl mt-16 text-indigo-300 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
+        >
+          <TfiAngleDown
+            className={`${
+              scrollOutView ? "opacity-0" : ""
+            } -mb-4 animate-bounce animate-infinite duration-300`}
+          />
+          <TfiAngleDown
+            className={`${
+              scrollOutView ? "opacity-0" : ""
+            } -mb-4 animate-bounce animate-infinite duration-400 animate-delay-100`}
+          />
+          <TfiAngleDown
+            className={`${
+              scrollOutView ? "opacity-0" : ""
+            } -mb-4 animate-bounce animate-infinite duration-500 animate-delay-200`}
+          />
+        </span>
+      </div>
       <div className="flex flex-col min-h-[80vh] items-center w-1/2 justify-center">
         <motion.div
+          ref={scroll}
           variants={infoVariant}
           initial="hidden"
           animate={infoAnimation}
@@ -86,19 +123,19 @@ const Banner = () => {
           className="flex items-center justify-center flex-col my-16"
         >
           <h1 className="text-indigo-500 font-bold font-poppins text-5xl text-center">
-            I LIKE TO MAKE THINGS LOOK
+            I LIKE TO MAKE THINGS THAT LOOK
           </h1>
           <Sparkles>
             <h1 className="text-indigo-500 my-36 font-rubikMaps text-9xl text-center">
               NICE
             </h1>
           </Sparkles>
-          <h1 className="text-indigo-700 font-light font-poppins text-3xl text-center">
-            Or at least what i view as nice
+          <h1 className="text-indigo-600 font-light font-poppins text-3xl text-center">
+            Or at least not completely hideous
           </h1>
         </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 

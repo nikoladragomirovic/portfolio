@@ -3,7 +3,7 @@ import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 import { useLocation, Routes, Route, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import Hero from "./Hero";
+import Banner from "./Banner";
 
 const Window = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -42,7 +42,7 @@ const Window = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
-        className={`font-light w-full h-screen flex items-center justify-center text-indigo-800 bg-indigo-100 ${
+        className={`font-light w-full h-screen flex items-center justify-center text-indigo-800 bg-indigo-50 ${
           windowWidth < 1075 ? "" : "hidden"
         } px-10`}
       >
@@ -51,9 +51,9 @@ const Window = () => {
     );
 
   return (
-    <div className="w-full h-screen flex flex-row justify-between items-center px-2 py-10 bg-indigo-100">
+    <div className="w-full h-screen flex flex-row justify-between items-center px-2 py-10 bg-indigo-50">
       <BiSolidLeftArrow
-        className={`text-6xl text-indigo-400 bg-gradient-to-r from-indigo-100 to-indigo-300 mr-4 rounded-r-md p-2 hover:text-7xl hover:mr-6 duration-300 ${
+        className={`text-6xl text-indigo-400 bg-gradient-to-r from-transparent to-indigo-300 mr-4 rounded-r-md p-2 hover:text-7xl hover:mr-6 duration-300 ${
           animateLeftArrow ? "animate-jump" : ""
         }`}
         onClick={() => {
@@ -71,7 +71,7 @@ const Window = () => {
         className={`w-full h-full overflow-hidden rounded-lg relative flex items-center duration-300 justify-center p-8 pt-16 outline outline-2 outline-indigo-200`}
       >
         <div className="bg-[url('https://cdn.dribbble.com/users/5520917/screenshots/15604939/media/777c7c72d99b1335909d6f7d6e2a974c.gif')] blur-3xl scale-125 opacity-75 w-full h-full bg-cover absolute"></div>
-        <div className="w-full h-full bg-indigo-50 rounded-lg relative shadow-[0_0_30px] shadow-indigo-600 outline outline-2 outline-indigo-200 overflow-auto">
+        <div className="w-full h-full bg-indigo-100 rounded-lg relative outline outline-2 outline-indigo-200 overflow-auto">
           <Routes>
             <Route
               path="/"
@@ -94,7 +94,7 @@ const Window = () => {
                     exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
                     transition={{ duration: 0.4 }}
                   >
-                    <Hero />
+                    <Banner />
                   </motion.div>
                 </AnimatePresence>
               }
@@ -159,7 +159,7 @@ const Window = () => {
         </div>
       </div>
       <BiSolidRightArrow
-        className={`text-6xl text-indigo-400 bg-gradient-to-l from-indigo-100 to-indigo-300 ml-4 rounded-l-md p-2 hover:text-7xl hover:scale-x-125 hover:ml-6 duration-300 ${
+        className={`text-6xl text-indigo-400 bg-gradient-to-l from-transparent to-indigo-300 ml-4 rounded-l-md p-2 hover:text-7xl hover:scale-x-125 hover:ml-6 duration-300 ${
           animateRightArrow ? "animate-jump" : ""
         }`}
         onClick={() => {
