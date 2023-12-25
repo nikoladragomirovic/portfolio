@@ -25,9 +25,13 @@ const Banner = () => {
   useEffect(() => {
     if (bannerInView) {
       bannerAnimation.start("visible");
+    } else {
+      bannerAnimation.start("hidden");
     }
     if (infoInView) {
       infoAnimation.start("visible");
+    } else {
+      infoAnimation.start("hidden");
     }
   }, [bannerAnimation, bannerInView, infoAnimation, infoInView]);
 
