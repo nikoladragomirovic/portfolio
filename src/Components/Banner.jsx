@@ -50,23 +50,26 @@ const Banner = () => {
         <p className="text-3xl font-poppins mt-3 text-indigo-600 font-light animate-fade-up animate-duration-1000 animate-delay-1000">
           A wannabe frontend developer & UI/UX engineer
         </p>
+        <p className="text-lg mt-3 font-poppins text-indigo-600 font-light animate-fade-up animate-duration-1000 animate-delay-[1200ms]">
+          I know it looks gay
+        </p>
         <span
-          className={`text-3xl mt-16 text-indigo-300 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
+          className={`text-3xl mt-16 text-indigo-400 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
         >
           <TfiAngleDown
             className={`${
               scrollOutView ? "opacity-0" : ""
-            } -mb-4 animate-bounce animate-infinite duration-300`}
+            } -mb-4 animate-bounce duration-300`}
           />
           <TfiAngleDown
             className={`${
               scrollOutView ? "opacity-0" : ""
-            } -mb-4 animate-bounce animate-infinite duration-400 animate-delay-100`}
+            } -mb-4 animate-bounce duration-400 animate-delay-100`}
           />
           <TfiAngleDown
             className={`${
               scrollOutView ? "opacity-0" : ""
-            } -mb-4 animate-bounce animate-infinite duration-500 animate-delay-200`}
+            } -mb-4 animate-bounce duration-500 animate-delay-200`}
           />
         </span>
       </div>

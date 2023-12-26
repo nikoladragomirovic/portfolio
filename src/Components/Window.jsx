@@ -4,6 +4,7 @@ import { useLocation, Routes, Route, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Banner from "./Banner";
+import Contact from "./Contact";
 
 const Window = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -148,9 +149,7 @@ const Window = () => {
                     exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
                     transition={{ duration: 0.4 }}
                   >
-                    <p className="w-full h-full flex items-center justify-center text-black">
-                      CONTACT
-                    </p>
+                    <Contact />
                   </motion.div>
                 </AnimatePresence>
               }
