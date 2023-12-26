@@ -18,8 +18,8 @@ const Banner = () => {
   const scrollOutView = useInView(scroll);
 
   const bannerVariant = {
-    visible: { opacity: 1, y: "0%" },
-    hidden: { opacity: 0, y: "100%" },
+    visible: { opacity: 1, scale: 1.048, z: 0 },
+    hidden: { opacity: 0, scale: 0, z: 0 },
   };
 
   const infoVariant = {
@@ -47,29 +47,28 @@ const Banner = () => {
           <br />
           DRAGOMIROVIĆ
         </h1>
-        <p className="text-3xl font-poppins mt-3 text-indigo-600 font-light animate-fade-up animate-duration-1000 animate-delay-1000">
+        <p className="text-3xl font-poppins mt-6 text-indigo-600 font-light animate-fade-up animate-duration-1000 animate-delay-1000">
           A wannabe frontend developer & UI/UX engineer
         </p>
         <p className="text-lg mt-3 font-poppins text-indigo-600 font-light animate-fade-up animate-duration-1000 animate-delay-[1200ms]">
           I know it looks gay
         </p>
         <span
-          className={`text-3xl mt-16 text-indigo-400 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
+          className={`text-3xl mt-16 text-indigo-300 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
         >
           <TfiAngleDown
             className={`${
-              scrollOutView ? "opacity-0" : ""
-            } -mb-4 animate-bounce duration-300`}
+              scrollOutView
+                ? "opacity-0"
+                : "animate-jump animate-duration-1000 animate-infinite"
+            } -mb-4 duration-300`}
           />
           <TfiAngleDown
             className={`${
-              scrollOutView ? "opacity-0" : ""
-            } -mb-4 animate-bounce duration-400 animate-delay-100`}
-          />
-          <TfiAngleDown
-            className={`${
-              scrollOutView ? "opacity-0" : ""
-            } -mb-4 animate-bounce duration-500 animate-delay-200`}
+              scrollOutView
+                ? "opacity-0"
+                : "animate-jump animate-infinite animate-duration-1000 animate-delay-100"
+            } mb-5 duration-[400ms]`}
           />
         </span>
       </div>
@@ -129,7 +128,7 @@ const Banner = () => {
             I LIKE TO MAKE THINGS THAT LOOK
           </h1>
           <Sparkles>
-            <h1 className="text-indigo-500 my-36 font-rubikMaps text-9xl text-center">
+            <h1 className="text-indigo-400 my-36 font-rubikMaps text-9xl text-center antialiased">
               NICE
             </h1>
           </Sparkles>

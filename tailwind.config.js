@@ -6,8 +6,7 @@ export default {
       fontFamily: {
         comfortaa: ["Comfortaa", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
-        pressStart: ["Press Start 2P", "cursive"],
-        rubikMaps: ["Rubik Maps", "sans-serif"],
+        rubikMaps: ["Agbalumo", "sans-serif"],
       },
     },
   },
