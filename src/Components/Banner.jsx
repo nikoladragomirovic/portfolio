@@ -50,9 +50,6 @@ const Banner = () => {
         <p className="text-3xl font-poppins mt-6 text-indigo-600 font-light animate-fade-up animate-duration-1000 animate-delay-1000">
           A wannabe frontend developer & UI/UX engineer
         </p>
-        <p className="text-lg mt-3 font-poppins text-indigo-600 font-light animate-fade-up animate-duration-1000 animate-delay-[1200ms]">
-          I know it looks gay
-        </p>
         <span
           className={`text-3xl mt-16 text-indigo-300 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
         >
@@ -67,7 +64,7 @@ const Banner = () => {
             className={`${
               scrollOutView
                 ? "opacity-0"
-                : "animate-jump animate-infinite animate-duration-1000 animate-delay-100"
+                : "animate-jump animate-infinite animate-duration-1000 animate-delay-200"
             } mb-5 duration-[400ms]`}
           />
         </span>
@@ -125,7 +122,7 @@ const Banner = () => {
           className="flex items-center justify-center flex-col my-16"
         >
           <h1 className="text-indigo-500 font-bold font-poppins text-5xl text-center">
-            I LIKE TO MAKE THINGS THAT LOOK
+            I MAKE THINGS THAT LOOK
           </h1>
           <Sparkles>
             <h1 className="text-indigo-400 my-36 font-rubikMaps text-9xl text-center antialiased">
@@ -133,7 +130,7 @@ const Banner = () => {
             </h1>
           </Sparkles>
           <h1 className="text-indigo-600 font-light font-poppins text-3xl text-center">
-            Or at least not completely hideous
+            or at least not completely hideous
           </h1>
         </motion.div>
       </div>
