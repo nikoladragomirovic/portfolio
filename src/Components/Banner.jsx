@@ -76,7 +76,7 @@ const Banner = () => {
           initial="hidden"
           animate={infoAnimation}
           transition={{ duration: 1 }}
-          className="text-lg font-poppins text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
+          className="text-xl font-poppins text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
         >
           <HiAcademicCap className=" text-5xl text-indigo-400 mb-4" />
           <p>
@@ -89,7 +89,7 @@ const Banner = () => {
           initial="hidden"
           animate={infoAnimation}
           transition={{ duration: 1.5 }}
-          className="text-lg font-poppins mt-16 text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
+          className="text-xl font-poppins mt-16 text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
         >
           <HiCode className=" text-5xl text-indigo-400 mb-4" />
           <p>
@@ -103,7 +103,7 @@ const Banner = () => {
           initial="hidden"
           animate={infoAnimation}
           transition={{ duration: 2 }}
-          className="text-lg font-poppins mt-16 text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
+          className="text-xl font-poppins mt-16 text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
         >
           <FaPaintBrush className=" text-4xl text-indigo-400 mb-4" />
           <p>

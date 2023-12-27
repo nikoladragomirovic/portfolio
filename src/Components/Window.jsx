@@ -131,9 +131,9 @@ const Window = () => {
             <Route
               path="/contact"
               element={
-                <AnimatePresence mode="wait" className="w-full h-full">
+                <AnimatePresence mode="wait" className="w-full">
                   <motion.div
-                    className="w-full h-full"
+                    className="w-full"
                     key="contact"
                     initial={{
                       opacity: 0,
