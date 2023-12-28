@@ -4,6 +4,7 @@ import "animate.css";
 import { ImGithub } from "react-icons/im";
 import { RiLinkedinLine } from "react-icons/ri";
 import { RxInstagramLogo } from "react-icons/rx";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const Contact = () => {
   const [animateSend, setAnimateSend] = useState(false);
@@ -45,7 +46,7 @@ const Contact = () => {
           className={`text-indigo-500 duration-300 text-light font-light text-xl ${
             animateSend
               ? "opacity-100 delay-[1400ms] translate-y-32"
-              : "opacity-0 -mb-3"
+              : "opacity-0"
           }`}
         >
           Message Sent!
@@ -61,18 +62,21 @@ const Contact = () => {
         ></textarea>
         <div className="flex w-full flex-row items-center justify-center mt-20">
           <div className="animate__animated animate__zoomInDown animate-delay-[1200ms] flex">
-            <span className="group p-2 rounded-lg bg-indigo-200 hover:rotate-[23deg] duration-300 hover:translate-y-1">
+            <span className="group p-2 rounded-lg bg-indigo-200 hover:rotate-[23deg] relative duration-300 hover:translate-y-1">
               <ImGithub className="text-4xl text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
+              <FiArrowUpRight className="absolute top-0 right-0 opacity-0 text-indigo-500 duration-300 group-hover:opacity-100 group-hover:scale-150 group-hover:-translate-x-2 group-hover:translate-y-2" />
             </span>
           </div>
           <div className="animate__animated animate__zoomInDown animate-delay-[1400ms] flex">
             <span className="group p-2 rounded-lg bg-indigo-200 hover:rotate-[23deg] duration-300 hover:translate-y-1 mx-36">
               <RiLinkedinLine className="text-4xl text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
+              <FiArrowUpRight className="absolute top-0 right-0 opacity-0 text-indigo-500 duration-300 group-hover:opacity-100 group-hover:scale-150 group-hover:-translate-x-2 group-hover:translate-y-2" />
             </span>
           </div>
           <div className="animate__animated animate__zoomInDown animate-delay-[1600ms] flex">
             <span className="group p-2 rounded-lg bg-indigo-200 hover:rotate-[23deg] duration-300 hover:translate-y-1">
               <RxInstagramLogo className="text-4xl text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
+              <FiArrowUpRight className="absolute top-0 right-0 opacity-0 text-indigo-500 duration-300 group-hover:opacity-100 group-hover:scale-150 group-hover:-translate-x-2 group-hover:translate-y-2" />
             </span>
           </div>
         </div>
