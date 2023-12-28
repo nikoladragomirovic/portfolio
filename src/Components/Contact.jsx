@@ -56,7 +56,7 @@ const Contact = () => {
           readOnly={animateSend}
           className={`w-7/12 pb-64 duration-500 rounded-2xl outline z-10 p-3 resize-none outline-1 placeholder-indigo-300 outline-indigo-200 focus:outline-indigo-400 font-poppins text-indigo-500 animate__animated bg-indigo-50 ${
             animateSend
-              ? "animate__animated animate__zoomOutUp -mt-7"
+              ? "animate__animated animate__zoomOutUp -mt-7 mb-7"
               : "animate__animated animate__zoomInDown animate-delay-[1000ms]"
           }`}
         ></textarea>
