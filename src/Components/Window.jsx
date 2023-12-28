@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Banner from "./Banner";
 import Contact from "./Contact";
+import frame from "../Rescources/Window.gif";
 
 const Window = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -71,7 +72,10 @@ const Window = () => {
       <div
         className={`w-full h-full overflow-hidden rounded-lg relative flex items-center duration-300 justify-center p-8 pt-16 outline outline-2 outline-indigo-200`}
       >
-        <div className="bg-[url('https://cdn.dribbble.com/users/5520917/screenshots/15604939/media/777c7c72d99b1335909d6f7d6e2a974c.gif')] blur-3xl scale-125 opacity-75 w-full h-full bg-cover absolute"></div>
+        <div
+          className={`blur-3xl scale-125 opacity-75 w-full h-full bg-cover absolute`}
+          style={{ backgroundImage: `url(${frame})` }}
+        ></div>
         <div className="w-full h-full bg-indigo-100 rounded-lg relative outline outline-2 outline-indigo-200 overflow-auto">
           <Routes>
             <Route
