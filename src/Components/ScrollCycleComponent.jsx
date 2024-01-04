@@ -1,11 +1,10 @@
-// ScrollCycleComponent.jsx
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Component1 from "./Component1";
-import Component2 from "./Component2";
-import Component3 from "./Component3";
+import RentASound from "./RentASound";
+import Trenirai from "./Trenirai";
+import Cokolada from "./Cokolada";
 
-const components = [Component1, Component2, Component3];
+const components = [RentASound, Trenirai, Cokolada];
 const cooldownTime = 1500;
 
 const ScrollCycleComponent = () => {
@@ -13,12 +12,21 @@ const ScrollCycleComponent = () => {
   const [lastScrollTime, setLastScrollTime] = useState(0);
   const [keyIndex, setKeyIndex] = useState(0);
 
-  const handleScroll = () => {
+  const handleScroll = (event) => {
     const currentTime = new Date().getTime();
+    const deltaY = event.deltaY;
+
     if (currentTime - lastScrollTime > cooldownTime) {
-      setCurrentComponentIndex(
-        (prevIndex) => (prevIndex + 1) % components.length
-      );
+      if (deltaY > 0) {
+        setCurrentComponentIndex(
+          (prevIndex) => (prevIndex + 1) % components.length
+        );
+      } else {
+        setCurrentComponentIndex(
+          (prevIndex) => (prevIndex - 1 + components.length) % components.length
+        );
+      }
+
       setLastScrollTime(currentTime);
       setKeyIndex(keyIndex + 1);
     }
@@ -37,14 +45,17 @@ const ScrollCycleComponent = () => {
   return (
     <AnimatePresence mode="wait" className="w-full h-full">
       <motion.div
-        className="w-full"
+        className="w-full h-[80vh]"
         key={keyIndex}
         initial={{
-          opacity: 0,
           y: "-100%",
         }}
-        animate={{ opacity: 1, y: "0%" }}
-        exit={{ opacity: 0, y: "100%" }}
+        animate={{
+          y: "0%",
+        }}
+        exit={{
+          y: "100%",
+        }}
         transition={{ duration: 0.4 }}
       >
         <ComponentToRender />
