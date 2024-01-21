@@ -56,7 +56,7 @@ const Window = () => {
   return (
     <div className="w-full h-screen flex flex-row justify-between items-center px-2 py-10 bg-indigo-50">
       <BiSolidLeftArrow
-        className={`text-6xl text-indigo-400 bg-gradient-to-r from-transparent to-indigo-300 mr-4 rounded-r-md p-2 hover:text-7xl hover:mr-6 duration-300 ${
+        className={`text-6xl text-indigo-400 bg-gradient-to-r from-transparent to-indigo-300 mr-4 rounded-r-md p-2 duration-300 ${
           animateLeftArrow ? "animate-jump" : ""
         }`}
         onClick={() => {
@@ -74,8 +74,11 @@ const Window = () => {
         className={`w-full h-full overflow-hidden rounded-lg relative flex items-center duration-300 justify-center p-8 pt-16 outline outline-2 outline-indigo-200`}
       >
         <div
-          className={`blur-3xl scale-125 opacity-75 w-full h-full bg-cover absolute`}
-          style={{ backgroundImage: `url(${frame})` }}
+          className={`blur-3xl opacity-60 w-full h-full bg-cover absolute`}
+          style={{
+            backgroundImage: `url(${frame})`,
+            transform: "translate3d(0,0,0) scale(1.25)",
+          }}
         ></div>
         <div className="w-full h-full bg-indigo-100 rounded-lg relative outline outline-2 outline-indigo-200 overflow-auto">
           <Routes>
@@ -98,7 +101,7 @@ const Window = () => {
                     }}
                     animate={{ opacity: 1, x: "0%", y: "0%" }}
                     exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.6 }}
                   >
                     <Banner />
                   </motion.div>
@@ -124,7 +127,7 @@ const Window = () => {
                     }}
                     animate={{ opacity: 1, x: "0%", y: "0%" }}
                     exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.6 }}
                   >
                     <ScrollCycleComponent />
                   </motion.div>
@@ -150,7 +153,7 @@ const Window = () => {
                     }}
                     animate={{ opacity: 1, x: "0%", y: "0%" }}
                     exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.6 }}
                   >
                     <Contact />
                   </motion.div>
@@ -161,7 +164,7 @@ const Window = () => {
         </div>
       </div>
       <BiSolidRightArrow
-        className={`text-6xl text-indigo-400 bg-gradient-to-l from-transparent to-indigo-300 ml-4 rounded-l-md p-2 hover:text-7xl hover:scale-x-125 hover:ml-6 duration-300 ${
+        className={`text-6xl text-indigo-400 bg-gradient-to-l from-transparent to-indigo-300 ml-4 rounded-l-md p-2 duration-300 ${
           animateRightArrow ? "animate-jump" : ""
         }`}
         onClick={() => {

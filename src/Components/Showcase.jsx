@@ -3,10 +3,9 @@ import { Canvas } from "@react-three/fiber";
 import { Text3D, Center, Float } from "@react-three/drei";
 import fontFace from "../Rescources/Poppins.json";
 import { Color } from "three";
-import thumbnail from "../Rescources/Rent a Sound.jpeg";
 import { PiArrowArcRightLight } from "react-icons/pi";
 
-const RentASound = () => {
+const Showcase = ({ name, imgSrc, description }) => {
   return (
     <>
       <div className="w-full h-full">
@@ -28,7 +27,7 @@ const RentASound = () => {
                 bevelThickness={0.2}
                 letterSpacing={0.1}
               >
-                RENT A SOUND
+                {name}
                 <meshStandardMaterial color="#818cf8" />
               </Text3D>
             </Float>
@@ -36,24 +35,23 @@ const RentASound = () => {
         </Canvas>
       </div>
       <div className="top-[35%] px-36 absolute flex flex-row items-center justify-between font-poppins">
-        <span className="group relative hover:rotate-[4deg] duration-200 w-[80%] p-10 rounded-2xl bg-indigo-300 bg-opacity-30 backdrop-blur-sm outline-indigo-200 outline outline-1">
+        <span className="group relative hover:rotate-[4deg] duration-500 w-[80%] p-10 rounded-2xl bg-indigo-300 bg-opacity-30 backdrop-blur-sm outline-indigo-200 outline outline-1">
           <img
-            className="w-full rounded-xl outline outline-indigo-50 outline-1 group-hover:rotate-[-10deg] duration-200 group-hover:-translate-x-6 group-hover:scale-105 group-hover:-translate-y-2"
-            src={thumbnail}
+            className="w-full rounded-xl outline outline-indigo-50 outline-1 group-hover:rotate-[-10deg] duration-500 group-hover:-translate-x-6 group-hover:scale-105 group-hover:-translate-y-2"
+            src={imgSrc}
+            alt={name}
           ></img>
-          <div className="flex flex-row items-center font-extralight absolute text-4xl text-indigo-500 bottom-4 right-5 opacity-0 group-hover:opacity-100 duration-200">
+          <div className="flex flex-row items-center font-extralight absolute text-4xl text-indigo-500 bottom-4 right-5 opacity-0 group-hover:opacity-100 duration-500">
             open
             <PiArrowArcRightLight />
           </div>
         </span>
         <p className="text-lg w-1/2 font-light text-indigo-700 p-6">
-          Web portal made for a small speaker rental business covering Novi Sad
-          & Belgrade, you can view the catalogue with realtime information about
-          taken speakers, and order.
+          {description}
         </p>
       </div>
     </>
   );
 };
 
-export default RentASound;
+export default Showcase;

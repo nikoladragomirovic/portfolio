@@ -1,14 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import RentASound from "./RentASound";
-import Trenirai from "./Trenirai";
-import Cokolada from "./Cokolada";
+import Showcase from "./Showcase";
+import cokolada from "../Rescources/Cokolada.jpeg";
+import rentasound from "../Rescources/Rent A Sound.jpeg";
+import trenirai from "../Rescources/Trenirai.jpeg";
 
-const components = [RentASound, Trenirai, Cokolada];
+const showcasesData = [
+  {
+    name: "COKOLADA",
+    imgSrc: cokolada,
+    description:
+      "Web portal made for a 48h hackaton challenge, backend written in Node.js, frontend done using React & TailwindCSS.",
+  },
+  {
+    name: "RENT A SOUND",
+    imgSrc: rentasound,
+    description:
+      "Web portal made for a small speaker rental business covering Novi Sad & Belgrade, you can view the catalogue with realtime information about taken speakers, and order.",
+  },
+  {
+    name: "TRENIRAI",
+    imgSrc: trenirai,
+    description:
+      "Web frontend concept application for an AI workout plan assisant, made using vanilla javascript, html, css.",
+  },
+];
+
 const cooldownTime = 1500;
 
 const ScrollCycleComponent = () => {
-  const [currentComponentIndex, setCurrentComponentIndex] = useState(0);
+  const [currentShowcaseIndex, setCurrentShowcaseIndex] = useState(0);
   const [lastScrollTime, setLastScrollTime] = useState(0);
   const [keyIndex, setKeyIndex] = useState(0);
 
@@ -18,12 +39,13 @@ const ScrollCycleComponent = () => {
 
     if (currentTime - lastScrollTime > cooldownTime) {
       if (deltaY > 0) {
-        setCurrentComponentIndex(
-          (prevIndex) => (prevIndex + 1) % components.length
+        setCurrentShowcaseIndex(
+          (prevIndex) => (prevIndex + 1) % showcasesData.length
         );
       } else {
-        setCurrentComponentIndex(
-          (prevIndex) => (prevIndex - 1 + components.length) % components.length
+        setCurrentShowcaseIndex(
+          (prevIndex) =>
+            (prevIndex - 1 + showcasesData.length) % showcasesData.length
         );
       }
 
@@ -40,7 +62,7 @@ const ScrollCycleComponent = () => {
     };
   }, [lastScrollTime]);
 
-  const ComponentToRender = components[currentComponentIndex];
+  const currentShowcase = showcasesData[currentShowcaseIndex];
 
   return (
     <AnimatePresence mode="wait" className="w-full h-full">
@@ -58,7 +80,11 @@ const ScrollCycleComponent = () => {
         }}
         transition={{ duration: 0.4 }}
       >
-        <ComponentToRender />
+        <Showcase
+          name={currentShowcase.name}
+          imgSrc={currentShowcase.imgSrc}
+          description={currentShowcase.description}
+        />
       </motion.div>
     </AnimatePresence>
   );
