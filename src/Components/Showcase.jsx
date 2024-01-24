@@ -16,7 +16,7 @@ const Showcase = ({ name, imgSrc, description }) => {
             intensity={7}
             color={new Color("#818cf8")}
           />
-          <Center scale={[0.8, 0.8, 1]} position={[0, 1.5, 0]}>
+          <Center scale={[0.8, 0.8, 1]} position={[0, 2, 0]}>
             <Float speed={2}>
               <Text3D
                 font={fontFace}
@@ -34,7 +34,7 @@ const Showcase = ({ name, imgSrc, description }) => {
           </Center>
         </Canvas>
       </div>
-      <div className="top-[35%] px-36 absolute flex flex-row items-center justify-between font-poppins">
+      <div className="top-[26%] px-36 absolute flex flex-row items-center justify-between font-poppins">
         <span className="group relative hover:rotate-[4deg] duration-500 w-[80%] p-10 rounded-2xl bg-indigo-300 bg-opacity-30 backdrop-blur-sm outline-indigo-200 outline outline-1">
           <img
             className="w-full rounded-xl outline outline-indigo-50 outline-1 group-hover:rotate-[-10deg] duration-500 group-hover:-translate-x-6 group-hover:scale-105 group-hover:-translate-y-2"

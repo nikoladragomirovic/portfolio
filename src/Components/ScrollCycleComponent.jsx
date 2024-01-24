@@ -4,6 +4,7 @@ import Showcase from "./Showcase";
 import cokolada from "../Rescources/Cokolada.jpeg";
 import rentasound from "../Rescources/Rent A Sound.jpeg";
 import trenirai from "../Rescources/Trenirai.jpeg";
+import flowmodoro from "../Rescources/Flowmodoro.jpg";
 
 const showcasesData = [
   {
@@ -24,9 +25,15 @@ const showcasesData = [
     description:
       "Web frontend concept application for an AI workout plan assisant, made using vanilla javascript, html, css.",
   },
+  {
+    name: "FLOWMODORO",
+    imgSrc: flowmodoro,
+    description:
+      "Electron pomodoro timer application that respects the flow state (adjusts rest based on time spent working).",
+  },
 ];
 
-const cooldownTime = 1500;
+const cooldownTime = 1000;
 
 const ScrollCycleComponent = () => {
   const [currentShowcaseIndex, setCurrentShowcaseIndex] = useState(0);
@@ -50,11 +57,13 @@ const ScrollCycleComponent = () => {
       }
 
       setLastScrollTime(currentTime);
-      setKeyIndex(keyIndex + 1);
+      setKeyIndex(currentShowcaseIndex);
     }
   };
 
   useEffect(() => {
+    handleScroll({ deltaY: 0 });
+
     window.addEventListener("wheel", handleScroll);
 
     return () => {
@@ -70,15 +79,15 @@ const ScrollCycleComponent = () => {
         className="w-full h-[80vh]"
         key={keyIndex}
         initial={{
-          y: "-100%",
+          opacity: 0,
         }}
         animate={{
-          y: "0%",
+          opacity: 100,
         }}
         exit={{
-          y: "100%",
+          opacity: 0,
         }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.2 }}
       >
         <Showcase
           name={currentShowcase.name}
