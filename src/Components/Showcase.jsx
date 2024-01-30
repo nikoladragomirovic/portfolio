@@ -16,7 +16,7 @@ const Showcase = ({ name, imgSrc, description }) => {
             intensity={7}
             color={new Color("#818cf8")}
           />
-          <Center scale={[0.8, 0.8, 1]} position={[0, 2, 0]}>
+          <Center scale={[1, 1, 1]} position={[0, 2, 0]}>
             <Float speed={4}>
               <Text3D
                 font={fontFace}

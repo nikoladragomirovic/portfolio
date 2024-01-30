@@ -87,7 +87,7 @@ const ScrollCycleComponent = () => {
         exit={{
           opacity: 0,
         }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.4 }}
       >
         <Showcase
           name={currentShowcase.name}
