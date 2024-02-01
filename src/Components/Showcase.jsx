@@ -4,8 +4,9 @@ import { Text3D, Center, Float } from "@react-three/drei";
 import fontFace from "../Rescources/Poppins.json";
 import { Color } from "three";
 import { PiArrowArcRightLight } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
-const Showcase = ({ name, imgSrc, description }) => {
+const Showcase = ({ name, imgSrc, description, link }) => {
   return (
     <>
       <div className="w-full h-full">
@@ -35,7 +36,10 @@ const Showcase = ({ name, imgSrc, description }) => {
         </Canvas>
       </div>
       <div className="xl:top-[26%] top-[40%] px-36 absolute flex flex-row items-center justify-between font-poppins">
-        <span className="group relative hover:rotate-[4deg] duration-500 w-[80%] p-10 rounded-2xl bg-indigo-300 bg-opacity-30 backdrop-blur-sm outline-indigo-200 outline outline-1">
+        <Link
+          to={link}
+          className="group relative hover:rotate-[4deg] duration-500 w-[80%] p-10 rounded-2xl bg-indigo-300 bg-opacity-30 backdrop-blur-sm outline-indigo-200 outline outline-1"
+        >
           <img
             className="w-full rounded-xl outline outline-indigo-50 outline-1 group-hover:rotate-[-10deg] duration-500 group-hover:-translate-x-6 group-hover:scale-105 group-hover:-translate-y-2"
             src={imgSrc}
@@ -45,7 +49,7 @@ const Showcase = ({ name, imgSrc, description }) => {
             open
             <PiArrowArcRightLight />
           </div>
-        </span>
+        </Link>
         <p className="text-lg w-1/2 font-light text-indigo-700 p-6">
           {description}
         </p>
