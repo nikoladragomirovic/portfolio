@@ -39,15 +39,16 @@ const Banner = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center bg-indigo-100">
       <div className="w-full min-h-[85vh] flex flex-col items-center justify-center">
-        <div className="rounded-t-3xl p-6 bg-gradient-to-b from-indigo-400 animate-jump-in animate-duration-1000 animate-delay-200">
-          <img className="max-h-64 rounded-3xl" src={me}></img>
-        </div>
-        <h1 className="text-8xl font-rubikMaps mt-8 text-indigo-400 w-full text-center animate-jump-in animate-duration-1000 animate-delay-500">
+        <img
+          className="max-h-64 rounded-3xl rounded-t-3xl animate-jump-in animate-duration-1000 animate-delay-200"
+          src={me}
+        ></img>
+        <h1 className="text-8xl font-rubikMaps mt-6 text-indigo-400 w-full text-center animate-jump-in animate-duration-1000 animate-delay-500">
           NIKOLA
           <br />
           DRAGOMIROVIĆ
         </h1>
-        <p className="text-3xl font-poppins mt-6 text-indigo-600 font-light animate-fade-up animate-duration-1000 animate-delay-1000">
+        <p className="text-3xl font-poppins mt-6 text-indigo-500 font-light animate-fade-up animate-duration-1000 animate-delay-1000">
           A wannabe frontend developer & UI/UX engineer
         </p>
         <span
@@ -76,7 +77,7 @@ const Banner = () => {
           initial="hidden"
           animate={infoAnimation}
           transition={{ duration: 1 }}
-          className="text-xl font-poppins text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
+          className="text-xl font-poppins text-indigo-600 font-light flex flex-col items-center justify-center w-full px-10 text-center"
         >
           <HiAcademicCap className=" text-5xl text-indigo-400 mb-4" />
           <p>
@@ -89,11 +90,11 @@ const Banner = () => {
           initial="hidden"
           animate={infoAnimation}
           transition={{ duration: 1.5 }}
-          className="text-xl font-poppins mt-16 text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
+          className="text-xl font-poppins mt-16 text-indigo-600 font-light flex flex-col items-center justify-center w-full px-10 text-center"
         >
           <HiCode className=" text-5xl text-indigo-400 mb-4" />
           <p>
-            Knows his way around the terminal, can build you a custom PC, or a
+            Know my way around the terminal, can build you a backend, or a
             custom linux kernel.
           </p>
         </motion.div>
@@ -103,25 +104,25 @@ const Banner = () => {
           initial="hidden"
           animate={infoAnimation}
           transition={{ duration: 2 }}
-          className="text-xl font-poppins mt-16 text-indigo-700 font-light flex flex-col items-center justify-center w-full px-10 text-center"
+          className="text-xl font-poppins mt-16 text-indigo-600 font-light flex flex-col items-center justify-center w-full px-10 text-center"
         >
           <FaPaintBrush className=" text-4xl text-indigo-400 mb-4" />
           <p>
-            Has a passion for UI/UX design, frontend development, overall just
-            likes making things.
+            I have a passion for UI/UX design, frontend development, overall
+            just like making things.
           </p>
         </motion.div>
       </div>
-      <div className="min-h-[80vh] flex items-center justify-center rounded-3xl animate-fade-up">
+      <div className="min-h-[83vh] flex items-center justify-center rounded-3xl animate-fade-up">
         <motion.div
           ref={banner}
           variants={bannerVariant}
           initial="hidden"
           animate={bannerAnimation}
           transition={{ duration: 1 }}
-          className="flex items-center justify-center flex-col my-16"
+          className="flex items-center justify-center flex-col"
         >
-          <h1 className="text-indigo-500 font-bold font-poppins text-5xl text-center">
+          <h1 className="text-indigo-400 font-bold font-poppins text-5xl text-center">
             I MAKE THINGS THAT LOOK
           </h1>
           <Sparkles>
@@ -129,7 +130,7 @@ const Banner = () => {
               NICE
             </h1>
           </Sparkles>
-          <h1 className="text-indigo-600 font-light font-poppins text-3xl text-center">
+          <h1 className="text-indigo-500 font-light font-poppins text-3xl text-center tracking-wider">
             or at least not completely hideous
           </h1>
         </motion.div>
