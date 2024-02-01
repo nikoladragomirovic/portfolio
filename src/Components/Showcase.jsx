@@ -38,6 +38,8 @@ const Showcase = ({ name, imgSrc, description, link }) => {
       <div className="xl:top-[26%] top-[40%] px-36 absolute flex flex-row items-center justify-between font-poppins">
         <Link
           to={link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="group relative hover:rotate-[4deg] duration-500 w-[80%] p-10 rounded-2xl bg-indigo-300 bg-opacity-30 backdrop-blur-sm outline-indigo-200 outline outline-1"
         >
           <img
