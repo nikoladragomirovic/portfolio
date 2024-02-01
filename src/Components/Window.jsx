@@ -54,9 +54,9 @@ const Window = () => {
     );
 
   return (
-    <div className="w-full h-screen flex flex-row justify-between items-center px-2 py-10 bg-indigo-50">
+    <div className="w-full h-screen flex flex-row justify-between items-center px-3 py-6 bg-indigo-50">
       <BiSolidLeftArrow
-        className={`text-6xl text-indigo-400 bg-gradient-to-r from-transparent to-indigo-300 mr-4 rounded-r-md p-2 duration-300 ${
+        className={`text-6xl text-indigo-300 mr-3 p-2 duration-300 ${
           animateLeftArrow ? "animate-jump" : ""
         }`}
         onClick={() => {
@@ -71,7 +71,7 @@ const Window = () => {
         }}
       />
       <div
-        className={`w-full h-full overflow-hidden rounded-lg relative flex items-center duration-300 justify-center p-8 pt-16 outline outline-2 outline-indigo-200`}
+        className={`w-full h-full overflow-hidden rounded-xl relative flex items-center justify-center p-8 pt-16 outline outline-1 outline-white`}
       >
         <div
           className={`blur-3xl opacity-60 w-full h-full bg-cover absolute`}
@@ -80,7 +80,7 @@ const Window = () => {
             transform: "translate3d(0,0,0) scale(1.25)",
           }}
         ></div>
-        <div className="w-full h-full bg-indigo-100 rounded-lg relative outline outline-2 outline-indigo-200 overflow-auto">
+        <div className="w-full h-full bg-indigo-100 rounded-lg relative outline outline-1 outline-white overflow-auto">
           <Routes>
             <Route
               path="/"
@@ -164,7 +164,7 @@ const Window = () => {
         </div>
       </div>
       <BiSolidRightArrow
-        className={`text-6xl text-indigo-400 bg-gradient-to-l from-transparent to-indigo-300 ml-4 rounded-l-md p-2 duration-300 ${
+        className={`text-6xl text-indigo-300 ml-3 p-2 duration-300 ${
           animateRightArrow ? "animate-jump" : ""
         }`}
         onClick={() => {
