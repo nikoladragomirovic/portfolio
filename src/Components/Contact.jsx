@@ -100,6 +100,8 @@ const Contact = () => {
           <div className="animate__animated animate__zoomInDown animate-delay-[1400ms] flex">
             <Link
               to="https://github.com/nikoladragomirovic"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group p-2 rounded-lg bg-indigo-200 hover:rotate-[23deg] relative duration-300 hover:translate-y-1"
             >
               <ImGithub className="text-4xl text-indigo-400 group-hover:text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
@@ -109,6 +111,8 @@ const Contact = () => {
           <div className="animate__animated animate__zoomInDown animate-delay-[1600ms] flex">
             <Link
               to="https://www.linkedin.com/in/nikola-dragomirović-374343299/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group p-2 rounded-lg bg-indigo-200 hover:rotate-[23deg] duration-300 hover:translate-y-1 mx-36"
             >
               <RiLinkedinLine className="text-4xl text-indigo-400 group-hover:text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
@@ -118,6 +122,8 @@ const Contact = () => {
           <div className="animate__animated animate__zoomInDown animate-delay-[1800ms] flex">
             <Link
               to="https://www.instagram.com/niledragomirovic/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group p-2 rounded-lg bg-indigo-200 hover:rotate-[23deg] duration-300 hover:translate-y-1"
             >
               <RxInstagramLogo className="text-4xl text-indigo-400 group-hover:text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
