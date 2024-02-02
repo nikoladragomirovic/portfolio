@@ -41,21 +41,21 @@ const Showcase = ({ name, imgSrc, description, link }) => {
           to={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative hover:rotate-[4deg] duration-500 w-[80%] p-10 rounded-2xl bg-indigo-300 bg-opacity-30 backdrop-blur-sm outline-indigo-200 outline outline-1"
+          className="group relative hover:rotate-[4deg] duration-500 p-8 rounded-2xl bg-indigo-200 bg-opacity-45 backdrop-blur-sm outline-indigo-200 outline outline-1"
         >
           <img
-            className="min-w-96 rounded-xl outline outline-indigo-50 outline-1 group-hover:rotate-[-10deg] duration-500 group-hover:-translate-x-6 group-hover:scale-105 group-hover:-translate-y-2"
+            className="max-w-[30rem] rounded-xl outline outline-indigo-50 outline-1 group-hover:rotate-[-10deg] duration-500 group-hover:-translate-x-6 group-hover:scale-105 group-hover:-translate-y-2"
             src={imgSrc}
             alt={name}
           ></img>
-          <div className="flex flex-row items-center font-extralight absolute text-2xl text-indigo-500 bottom-4 right-5 opacity-0 group-hover:opacity-100 duration-500">
+          <div className="flex flex-row items-center font-extralight absolute text-2xl text-indigo-500 bottom-3 right-4 opacity-0 group-hover:opacity-100 duration-500">
             open
             <PiArrowArcRightLight />
           </div>
         </Link>
-        <div className="w-full flex flex-col items-start pl-10">
+        <div className="w-full flex flex-col items-start ml-10 py-6 px-8 bg-indigo-200 bg-opacity-45 rounded-xl outline outline-1 outline-indigo-200 z-50 backdrop-blur-sm">
           <span
-            className={`text-xl text-indigo-300 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
+            className={`text-xl text-indigo-400 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
           >
             <TfiAngleUp className="animate-jump animate-duration-1000 animate-delay-200 animate-infinite duration-300" />
             <TfiAngleUp
@@ -64,11 +64,11 @@ const Showcase = ({ name, imgSrc, description, link }) => {
               }
             />
           </span>
-          <p className="text-md w-11/12 h-full font-light text-indigo-700 my-[3%]">
+          <p className="text-md h-full font-light text-indigo-700 my-[3%]">
             {description}
           </p>
           <span
-            className={`text-xl text-indigo-300 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
+            className={`text-xl text-indigo-400 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
           >
             <TfiAngleDown className="animate-jump animate-duration-1000 animate-infinite -mb-2 duration-300" />
             <TfiAngleDown
