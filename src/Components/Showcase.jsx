@@ -5,11 +5,12 @@ import fontFace from "../Rescources/Poppins.json";
 import { Color } from "three";
 import { PiArrowArcRightLight } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 
 const Showcase = ({ name, imgSrc, description, link }) => {
   return (
     <>
-      <div className="w-full h-full">
+      <div className="w-full h-[80vh] absolute -mt-[12%]">
         <Canvas>
           <ambientLight intensity={1} />
           <directionalLight
@@ -17,12 +18,12 @@ const Showcase = ({ name, imgSrc, description, link }) => {
             intensity={7}
             color={new Color("#818cf8")}
           />
-          <Center scale={[1, 1, 1]} position={[0, 2, 0]}>
+          <Center scale={[1, 1, 1]} position={[0, 0, 0]}>
             <Float speed={4}>
               <Text3D
                 font={fontFace}
                 position={[0, 0, 0]}
-                scale={[0.9, 0.9, 0.3]}
+                scale={[1, 1, 0.6]}
                 bevelEnabled
                 bevelSize={0.06}
                 bevelThickness={0.2}
@@ -35,7 +36,7 @@ const Showcase = ({ name, imgSrc, description, link }) => {
           </Center>
         </Canvas>
       </div>
-      <div className="xl:top-[26%] top-[40%] px-36 absolute flex flex-row items-center justify-between font-poppins">
+      <div className="px-36 pt-[10%] w-full h-full flex flex-row items-center justify-between font-poppins">
         <Link
           to={link}
           target="_blank"
@@ -43,18 +44,40 @@ const Showcase = ({ name, imgSrc, description, link }) => {
           className="group relative hover:rotate-[4deg] duration-500 w-[80%] p-10 rounded-2xl bg-indigo-300 bg-opacity-30 backdrop-blur-sm outline-indigo-200 outline outline-1"
         >
           <img
-            className="w-full rounded-xl outline outline-indigo-50 outline-1 group-hover:rotate-[-10deg] duration-500 group-hover:-translate-x-6 group-hover:scale-105 group-hover:-translate-y-2"
+            className="min-w-96 rounded-xl outline outline-indigo-50 outline-1 group-hover:rotate-[-10deg] duration-500 group-hover:-translate-x-6 group-hover:scale-105 group-hover:-translate-y-2"
             src={imgSrc}
             alt={name}
           ></img>
-          <div className="flex flex-row items-center font-extralight absolute text-4xl text-indigo-500 bottom-4 right-5 opacity-0 group-hover:opacity-100 duration-500">
+          <div className="flex flex-row items-center font-extralight absolute text-2xl text-indigo-500 bottom-4 right-5 opacity-0 group-hover:opacity-100 duration-500">
             open
             <PiArrowArcRightLight />
           </div>
         </Link>
-        <p className="text-lg w-1/2 font-light text-indigo-700 p-6">
-          {description}
-        </p>
+        <div className="w-full flex flex-col items-start pl-10">
+          <span
+            className={`text-xl text-indigo-300 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
+          >
+            <TfiAngleUp className="animate-jump animate-duration-1000 animate-delay-200 animate-infinite duration-300" />
+            <TfiAngleUp
+              className={
+                "animate-jump animate-infinite animate-duration-1000 duration-[400ms] -mt-2"
+              }
+            />
+          </span>
+          <p className="text-md w-11/12 h-full font-light text-indigo-700 my-[3%]">
+            {description}
+          </p>
+          <span
+            className={`text-xl text-indigo-300 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
+          >
+            <TfiAngleDown className="animate-jump animate-duration-1000 animate-infinite -mb-2 duration-300" />
+            <TfiAngleDown
+              className={
+                "animate-jump animate-infinite animate-duration-1000 animate-delay-200 duration-[400ms]"
+              }
+            />
+          </span>
+        </div>
       </div>
     </>
   );

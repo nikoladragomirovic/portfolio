@@ -78,7 +78,7 @@ const ScrollCycleComponent = () => {
   const currentShowcase = showcasesData[currentShowcaseIndex];
 
   return (
-    <AnimatePresence mode="wait" className="w-full h-full">
+    <AnimatePresence mode="wait" className="w-full h-[84vh]">
       <motion.div
         className="w-full h-[80vh]"
         key={keyIndex}
