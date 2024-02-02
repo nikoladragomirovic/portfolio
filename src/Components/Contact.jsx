@@ -102,7 +102,7 @@ const Contact = () => {
               to="https://github.com/nikoladragomirovic"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-2 rounded-lg bg-indigo-200 hover:rotate-[23deg] relative duration-300 hover:translate-y-1"
+              className="group p-2 rounded-lg hover:rotate-[23deg] relative duration-300 hover:translate-y-1 bg-indigo-200 bg-opacity-45 outline outline-1 outline-indigo-200"
             >
               <ImGithub className="text-4xl text-indigo-400 group-hover:text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
               <FiArrowUpRight className="absolute top-0 right-0 opacity-0 text-indigo-500 duration-300 group-hover:opacity-100 group-hover:scale-150 group-hover:-translate-x-2 group-hover:translate-y-2" />
@@ -113,7 +113,7 @@ const Contact = () => {
               to="https://www.linkedin.com/in/nikola-dragomirović-374343299/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-2 rounded-lg bg-indigo-200 hover:rotate-[23deg] duration-300 hover:translate-y-1 mx-36"
+              className="group p-2 rounded-lg hover:rotate-[23deg] duration-300 hover:translate-y-1 mx-36 bg-indigo-200 bg-opacity-45 outline outline-1 outline-indigo-200"
             >
               <RiLinkedinLine className="text-4xl text-indigo-400 group-hover:text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
               <FiArrowUpRight className="absolute top-0 right-0 opacity-0 text-indigo-500 duration-300 group-hover:opacity-100 group-hover:scale-150 group-hover:-translate-x-2 group-hover:translate-y-2" />
@@ -124,7 +124,7 @@ const Contact = () => {
               to="https://www.instagram.com/niledragomirovic/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-2 rounded-lg bg-indigo-200 hover:rotate-[23deg] duration-300 hover:translate-y-1"
+              className="group p-2 rounded-lg hover:rotate-[23deg] duration-300 hover:translate-y-1 bg-indigo-200 bg-opacity-45 outline outline-1 outline-indigo-200"
             >
               <RxInstagramLogo className="text-4xl text-indigo-400 group-hover:text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
               <FiArrowUpRight className="absolute top-0 right-0 opacity-0 text-indigo-500 duration-300 group-hover:opacity-100 group-hover:scale-150 group-hover:-translate-x-2 group-hover:translate-y-2" />
