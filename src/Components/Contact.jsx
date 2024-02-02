@@ -18,7 +18,7 @@ const Contact = () => {
 
   return (
     <>
-      <h1 className="w-full h-[84vh] absolute flex items-center justify-center">
+      <h1 className="w-full h-screen absolute -mt-[13vh]">
         <Canvas>
           <ambientLight intensity={1} />
           <directionalLight
@@ -26,7 +26,7 @@ const Contact = () => {
             intensity={7}
             color={new Color("#818cf8")}
           />
-          <Center scale={[1, 1, 1]} position={[0, 2.7, 0]}>
+          <Center scale={[1, 1, 1]} position={[0, 3, 0]}>
             <Float speed={4}>
               <Text3D
                 font={fontFace}
@@ -44,15 +44,15 @@ const Contact = () => {
           </Center>
         </Canvas>
       </h1>
-      <div className="absolute w-full h-[80vh] translate-x-36 -rotate-12 flex items-center justify-start">
+      <div className="absolute w-[40%] mt-[15vh] -rotate-12 flex items-center justify-center">
         <img className="max-w-72 animate-pulse" src={mail}></img>
       </div>
-      <div className="w-full h-[84vh] mt-10 flex flex-col items-center justify-center">
-        <div className="w-7/12 flex flex-row z-20 items-center justify-center">
+      <div className="w-full flex flex-col items-center justify-center mt-[20vh]">
+        <div className="w-7/12 flex flex-row z-20 items-center justify-start">
           <input
             key={comebackKey}
             placeholder="Your e-mail address"
-            className={`w-full py-4 rounded-xl z-30 bg-indigo-200 backdrop-blur-sm bg-opacity-45 duration-500 outline px-3 outline-1 outline-indigo-200 focus:bg-indigo-50 focus:bg-opacity-45 placeholder-indigo-300 font-poppins text-indigo-600  ${
+            className={`w-full py-[1.5vh] rounded-xl z-30 bg-indigo-200 backdrop-blur-sm bg-opacity-45 duration-500 outline px-3 outline-1 outline-indigo-200 focus:bg-indigo-50 focus:bg-opacity-45 placeholder-indigo-300 font-poppins text-indigo-600  ${
               animateSend
                 ? "animate__animated animate__bounceOutRight animate-delay-1000"
                 : "animate__animated animate__bounceInLeft animate-delay-[600ms]"
@@ -87,13 +87,13 @@ const Contact = () => {
           placeholder="Your message"
           key={comebackKey}
           readOnly={animateSend}
-          className={`w-7/12 pb-64 duration-500 rounded-2xl outline z-10 p-3 resize-none outline-1 placeholder-indigo-300 outline-indigo-200 focus:bg-indigo-50 focus:bg-opacity-45 font-poppins text-indigo-500 animate__animated bg-indigo-200 bg-opacity-45 backdrop-blur-sm ${
+          className={`w-7/12 pb-[25vh] duration-500 rounded-2xl outline z-10 p-3 resize-none outline-1 placeholder-indigo-300 outline-indigo-200 focus:bg-indigo-50 focus:bg-opacity-45 font-poppins text-indigo-500 animate__animated bg-indigo-200 bg-opacity-45 backdrop-blur-sm ${
             animateSend
               ? "animate__animated animate__zoomOutUp -mt-7 mb-7"
               : "animate__animated animate__zoomInDown animate-delay-[1000ms]"
           }`}
         ></textarea>
-        <div className="flex w-full flex-row items-center justify-center mt-20">
+        <div className="flex w-full flex-row items-center justify-center mt-[2%]">
           <h1 className="text-3xl font-poppins font-bold text-indigo-400 mx-20 animate__animated animate__zoomInDown animate-delay-[1200ms] tracking-wider">
             SOCIALS
           </h1>
