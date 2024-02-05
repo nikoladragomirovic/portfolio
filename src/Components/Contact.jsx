@@ -18,7 +18,7 @@ const Contact = () => {
 
   return (
     <>
-      <h1 className="w-full h-screen absolute -mt-[13vh]">
+      <h1 className="w-full h-screen absolute -mt-[14vh]">
         <Canvas>
           <ambientLight intensity={1} />
           <directionalLight
@@ -52,10 +52,10 @@ const Contact = () => {
           <input
             key={comebackKey}
             placeholder="Your e-mail address"
-            className={`w-full py-[1.5vh] rounded-xl z-30 bg-indigo-200 backdrop-blur-sm bg-opacity-45 duration-500 outline px-3 outline-1 outline-indigo-200 focus:bg-indigo-50 focus:bg-opacity-45 placeholder-indigo-300 font-poppins text-indigo-600  ${
+            className={`w-full py-[1.5vh] animate__animated rounded-xl z-30 bg-indigo-300 bg-opacity-35 duration-500 outline px-3 outline-1 outline-indigo-200 placeholder-indigo-400 font-poppins text-indigo-600  ${
               animateSend
-                ? "animate__animated animate__bounceOutRight animate-delay-1000"
-                : "animate__animated animate__bounceInLeft animate-delay-[600ms]"
+                ? "animate__bounceOutRight animate-delay-1000"
+                : "animate__bounceInLeft animate-delay-[600ms]"
             }`}
             readOnly={animateSend}
           ></input>
@@ -70,7 +70,7 @@ const Contact = () => {
             className={`text-indigo-400 text-5xl animate__animated ml-4 mr-2 ${
               animateSend
                 ? "animate__bounceOutRight animate-delay-1000"
-                : "animate__animated animate__bounceInLeft animate-delay-[600ms]"
+                : "animate__bounceInLeft animate-delay-[600ms]"
             }`}
           />
         </div>
@@ -87,10 +87,10 @@ const Contact = () => {
           placeholder="Your message"
           key={comebackKey}
           readOnly={animateSend}
-          className={`w-7/12 pb-[25vh] duration-500 rounded-2xl outline z-10 p-3 resize-none outline-1 placeholder-indigo-300 outline-indigo-200 focus:bg-indigo-50 focus:bg-opacity-45 font-poppins text-indigo-500 animate__animated bg-indigo-200 bg-opacity-45 backdrop-blur-sm ${
+          className={`w-7/12 pb-[25vh] animate__animated duration-500 rounded-2xl outline z-10 p-3 resize-none outline-1 placeholder-indigo-400 outline-indigo-200 font-poppins text-indigo-600 bg-indigo-300 bg-opacity-30 ${
             animateSend
-              ? "animate__animated animate__zoomOutUp -mt-7 mb-7"
-              : "animate__animated animate__zoomInDown animate-delay-[1000ms]"
+              ? "animate__zoomOutUp -mt-7 mb-7"
+              : "animate__zoomInDown animate-delay-[1000ms]"
           }`}
         ></textarea>
         <div className="flex w-full flex-row items-center justify-center mt-[2%]">
@@ -102,7 +102,7 @@ const Contact = () => {
               to="https://github.com/nikoladragomirovic"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-2 rounded-lg hover:rotate-[23deg] relative duration-300 hover:translate-y-1 bg-indigo-200 bg-opacity-45 outline outline-1 outline-indigo-200"
+              className="group p-2 rounded-lg hover:rotate-[23deg] relative duration-300 hover:translate-y-1 bg-indigo-300 bg-opacity-30 outline outline-1 outline-indigo-200"
             >
               <ImGithub className="text-4xl text-indigo-400 group-hover:text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
               <FiArrowUpRight className="absolute top-0 right-0 opacity-0 text-indigo-500 duration-300 group-hover:opacity-100 group-hover:scale-150 group-hover:-translate-x-2 group-hover:translate-y-2" />
@@ -113,7 +113,7 @@ const Contact = () => {
               to="https://www.linkedin.com/in/nikola-dragomirović-374343299/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-2 rounded-lg hover:rotate-[23deg] duration-300 hover:translate-y-1 mx-36 bg-indigo-200 bg-opacity-45 outline outline-1 outline-indigo-200"
+              className="group p-2 rounded-lg hover:rotate-[23deg] duration-300 hover:translate-y-1 mx-36 bg-indigo-300 bg-opacity-30 outline outline-1 outline-indigo-200"
             >
               <RiLinkedinLine className="text-4xl text-indigo-400 group-hover:text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
               <FiArrowUpRight className="absolute top-0 right-0 opacity-0 text-indigo-500 duration-300 group-hover:opacity-100 group-hover:scale-150 group-hover:-translate-x-2 group-hover:translate-y-2" />
@@ -124,7 +124,7 @@ const Contact = () => {
               to="https://www.instagram.com/niledragomirovic/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-2 rounded-lg hover:rotate-[23deg] duration-300 hover:translate-y-1 bg-indigo-200 bg-opacity-45 outline outline-1 outline-indigo-200"
+              className="group p-2 rounded-lg hover:rotate-[23deg] duration-300 hover:translate-y-1 bg-indigo-300 bg-opacity-30 outline outline-1 outline-indigo-200"
             >
               <RxInstagramLogo className="text-4xl text-indigo-400 group-hover:text-indigo-500 group-hover:-translate-x-7 group-hover:-rotate-[32deg] duration-300" />
               <FiArrowUpRight className="absolute top-0 right-0 opacity-0 text-indigo-500 duration-300 group-hover:opacity-100 group-hover:scale-150 group-hover:-translate-x-2 group-hover:translate-y-2" />
