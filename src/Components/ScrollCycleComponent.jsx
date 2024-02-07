@@ -5,6 +5,7 @@ import cokolada from "../Rescources/Cokolada.jpeg";
 import rentasound from "../Rescources/Rent A Sound.jpeg";
 import trenirai from "../Rescources/Trenirai.jpeg";
 import flowmodoro from "../Rescources/Flowmodoro.jpg";
+import ArrowIndicator from "./ArrowIndicator";
 
 const showcasesData = [
   {
@@ -69,7 +70,7 @@ const ScrollCycleComponent = () => {
   return (
     <AnimatePresence mode="wait" className="w-full h-[84vh]">
       <motion.div
-        className="w-full h-[80vh]"
+        className="w-full h-[82vh] flex items-center flex-col justify-start"
         key={keyIndex}
         initial={{
           opacity: 0,
@@ -88,6 +89,7 @@ const ScrollCycleComponent = () => {
           description={currentShowcase.description}
           link={currentShowcase.link}
         />
+        <ArrowIndicator />
       </motion.div>
     </AnimatePresence>
   );
