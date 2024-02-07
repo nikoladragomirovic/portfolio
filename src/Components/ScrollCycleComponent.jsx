@@ -37,43 +37,32 @@ const showcasesData = [
   },
 ];
 
-const cooldownTime = 1000;
-
 const ScrollCycleComponent = () => {
   const [currentShowcaseIndex, setCurrentShowcaseIndex] = useState(0);
-  const [lastScrollTime, setLastScrollTime] = useState(0);
   const [keyIndex, setKeyIndex] = useState(0);
 
-  const handleScroll = (event) => {
-    const currentTime = new Date().getTime();
-    const deltaY = event.deltaY;
-
-    if (currentTime - lastScrollTime > cooldownTime) {
-      if (deltaY > 0) {
-        setCurrentShowcaseIndex(
-          (prevIndex) => (prevIndex + 1) % showcasesData.length
-        );
-      } else {
-        setCurrentShowcaseIndex(
-          (prevIndex) =>
-            (prevIndex - 1 + showcasesData.length) % showcasesData.length
-        );
-      }
-
-      setLastScrollTime(currentTime);
-      setKeyIndex(currentShowcaseIndex);
+  const handleKeyDown = (event) => {
+    if (event.code === "ArrowDown") {
+      setCurrentShowcaseIndex(
+        (prevIndex) => (prevIndex + 1) % showcasesData.length
+      );
+    } else if (event.code === "ArrowUp") {
+      setCurrentShowcaseIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + showcasesData.length) % showcasesData.length
+      );
     }
+
+    setKeyIndex(currentShowcaseIndex);
   };
 
   useEffect(() => {
-    handleScroll({ deltaY: 0 });
-
-    window.addEventListener("wheel", handleScroll);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [lastScrollTime]);
+  }, [currentShowcaseIndex]);
 
   const currentShowcase = showcasesData[currentShowcaseIndex];
 

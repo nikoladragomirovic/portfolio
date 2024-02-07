@@ -54,29 +54,35 @@ const Showcase = ({ name, imgSrc, description, link }) => {
           </div>
         </Link>
         <div className="w-full flex flex-col items-start ml-10 py-6 px-8 bg-indigo-300 bg-opacity-30 rounded-xl outline outline-1 outline-indigo-200 z-50">
-          <span
-            className={`text-xl text-indigo-400 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
-          >
-            <TfiAngleUp className="animate-jump animate-duration-1000 animate-delay-200 animate-infinite duration-300" />
-            <TfiAngleUp
-              className={
-                "animate-jump animate-infinite animate-duration-1000 duration-[400ms] -mt-2"
-              }
-            />
-          </span>
-          <p className="text-md h-full font-light text-indigo-700 my-[3%]">
+          <div className="flex flex-row w-full items-center justify-start animate-fade-up animate-duration-1000 animate-delay-[1500ms]">
+            <span className={`text-xl text-indigo-400`}>
+              <TfiAngleUp className="animate-jump animate-duration-1000 animate-delay-200 animate-infinite duration-300" />
+              <TfiAngleUp
+                className={
+                  "animate-jump animate-infinite animate-duration-1000 duration-[400ms] -mt-2"
+                }
+              />
+            </span>
+            <p className="text-indigo-400 ml-5 font-light text-sm">
+              Use arrow keys to cycle projects
+            </p>
+          </div>
+          <p className="text-md h-full font-light text-indigo-700 my-[10%]">
             {description}
           </p>
-          <span
-            className={`text-xl text-indigo-400 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
-          >
-            <TfiAngleDown className="animate-jump animate-duration-1000 animate-infinite -mb-2 duration-300" />
-            <TfiAngleDown
-              className={
-                "animate-jump animate-infinite animate-duration-1000 animate-delay-200 duration-[400ms]"
-              }
-            />
-          </span>
+          <div className="flex flex-row w-full items-center justify-start animate-fade-down animate-duration-1000 animate-delay-[1500ms]">
+            <span className={`text-xl text-indigo-400`}>
+              <TfiAngleDown className="animate-jump animate-duration-1000 animate-infinite -mb-2 duration-300" />
+              <TfiAngleDown
+                className={
+                  "animate-jump animate-infinite animate-duration-1000 animate-delay-200 duration-[400ms]"
+                }
+              />
+            </span>
+            <p className="text-indigo-400 ml-5 font-light text-sm">
+              Use arrow keys to cycle projects
+            </p>
+          </div>
         </div>
       </div>
     </>
