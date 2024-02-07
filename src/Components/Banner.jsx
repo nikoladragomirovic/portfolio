@@ -53,24 +53,25 @@ const Banner = () => {
             A wannabe frontend developer & UI/UX engineer
           </p>
         </div>
-        <span
-          className={`text-2xl mt-auto mb-11 text-indigo-300 animate-fade-up animate-duration-1000 animate-delay-[1500ms]`}
+        <div
+          className={`${
+            scrollOutView ? "opacity-0" : "opacity-100"
+          } duration-500`}
         >
-          <TfiAngleDown
-            className={`${
-              scrollOutView
-                ? "opacity-0"
-                : "animate-jump animate-duration-1000 animate-infinite"
-            } -mb-3 duration-300`}
-          />
-          <TfiAngleDown
-            className={`${
-              scrollOutView
-                ? "opacity-0"
-                : "animate-jump animate-infinite animate-duration-1000 animate-delay-200"
-            } duration-[400ms]`}
-          />
-        </span>
+          <div className="animate-fade-up animate-duration-1000 animate-delay-[1500ms] flex flex-row items-center justify-center mb-8 mt-auto">
+            <span className={`text-xl text-indigo-300`}>
+              <TfiAngleDown className="animate-jump animate-duration-1000 animate-infinite -mb-2" />
+              <TfiAngleDown className="animate-jump animate-infinite animate-duration-1000 animate-delay-200" />
+            </span>
+            <p className="text-xl font-thin mx-6 text-indigo-400">
+              Scroll down to see more
+            </p>
+            <span className={`text-xl text-indigo-300`}>
+              <TfiAngleDown className="animate-jump animate-duration-1000 animate-infinite -mb-2" />
+              <TfiAngleDown className="animate-jump animate-infinite animate-duration-1000 animate-delay-200" />
+            </span>
+          </div>
+        </div>
       </div>
       <div className="flex flex-col min-h-[80vh] items-center w-1/2 justify-center">
         <motion.div
