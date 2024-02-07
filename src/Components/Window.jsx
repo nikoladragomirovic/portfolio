@@ -15,6 +15,7 @@ const Window = () => {
   const [direction, setDirection] = useState(null);
   const [animateLeftArrow, setAnimateLeftArrow] = useState(false);
   const [animateRightArrow, setAnimateRightArrow] = useState(false);
+  const [deviceType, setDeviceType] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,6 +27,19 @@ const Window = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+  }, []);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent;
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        userAgent
+      )
+    ) {
+      setDeviceType("mobile");
+    } else {
+      setDeviceType("desktop");
+    }
   }, []);
 
   const pageWheel = {
@@ -45,11 +59,15 @@ const Window = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
-        className={`font-light w-full h-screen flex items-center justify-center text-indigo-800 bg-indigo-50 ${
+        className={`font-light w-full h-screen flex items-center justify-center text-indigo-600 bg-indigo-50 ${
           windowWidth < 1075 ? "" : "hidden"
         } px-10`}
       >
-        Increase screen width to get the full experience &#128513;
+        {`${
+          deviceType === "desktop"
+            ? "Increase screen width to get the full experience 😁"
+            : "Mobile version coming soon, for now visit the portfolio on desktop 😁"
+        }`}
       </motion.div>
     );
 
