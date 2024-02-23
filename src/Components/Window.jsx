@@ -113,12 +113,12 @@ const Window = () => {
                         direction == null
                           ? "0%"
                           : direction === 0
-                          ? "100%"
-                          : "-100%",
+                          ? "-100%"
+                          : "100%",
                       y: direction == null ? "100%" : "0%",
                     }}
                     animate={{ opacity: 1, x: "0%", y: "0%" }}
-                    exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
+                    exit={{ opacity: 0, x: direction === 0 ? "100%" : "-100%" }}
                     transition={{ duration: 0.6 }}
                   >
                     <Banner />
@@ -139,12 +139,12 @@ const Window = () => {
                         direction == null
                           ? "0%"
                           : direction === 0
-                          ? "100%"
-                          : "-100%",
+                          ? "-100%"
+                          : "100%",
                       y: direction == null ? "100%" : "0%",
                     }}
                     animate={{ opacity: 1, x: "0%", y: "0%" }}
-                    exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
+                    exit={{ opacity: 0, x: direction === 0 ? "100%" : "-100%" }}
                     transition={{ duration: 0.6 }}
                   >
                     <ScrollCycleComponent />
@@ -165,12 +165,12 @@ const Window = () => {
                         direction == null
                           ? "0%"
                           : direction === 0
-                          ? "100%"
-                          : "-100%",
+                          ? "-100%"
+                          : "100%",
                       y: direction == null ? "100%" : "0%",
                     }}
                     animate={{ opacity: 1, x: "0%", y: "0%" }}
-                    exit={{ opacity: 0, x: direction === 0 ? "-100%" : "100%" }}
+                    exit={{ opacity: 0, x: direction === 0 ? "100%" : "-100%" }}
                     transition={{ duration: 0.6 }}
                   >
                     <Contact />
