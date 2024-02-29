@@ -51,6 +51,28 @@ const Window = () => {
     "right/contact": "/",
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.keyCode === 37) {
+        setDirection(0);
+        setTimeout(() => {
+          navigate(pageWheel["right" + location.pathname]);
+        }, 0);
+      } else if (event.keyCode === 39) {
+        setDirection(1);
+        setTimeout(() => {
+          navigate(pageWheel["left" + location.pathname]);
+        }, 0);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [location.pathname]);
+
   if (windowWidth < 1075)
     return (
       <motion.div
