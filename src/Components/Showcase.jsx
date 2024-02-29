@@ -1,7 +1,7 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import { Text3D, Center, Float } from "@react-three/drei";
-import fontFace from "../Rescources/Poppins.json";
+import fontFace from "../Poppins.json";
 import { Color } from "three";
 import { PiArrowArcRightLight } from "react-icons/pi";
 import { Link } from "react-router-dom";

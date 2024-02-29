@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Showcase from "./Showcase";
-import cokolada from "../Rescources/Cokolada.jpeg";
-import rentasound from "../Rescources/Rent A Sound.jpeg";
-import trenirai from "../Rescources/Trenirai.jpeg";
-import flowmodoro from "../Rescources/Flowmodoro.jpg";
+import cokolada from "/Cokolada.jpeg";
+import rentasound from "/Rent a Sound.jpeg";
+import trenirai from "/Trenirai.jpeg";
+import flowmodoro from "/Flowmodoro.jpg";
 import ArrowIndicator from "./ArrowIndicator";
-import toolstack from "../Rescources/ToolStack.png";
+import toolstack from "/ToolStack.png";
 
 const showcasesData = [
   {

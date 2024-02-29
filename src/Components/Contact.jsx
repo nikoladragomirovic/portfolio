@@ -7,9 +7,9 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { BiSolidSend } from "react-icons/bi";
 import { Canvas } from "@react-three/fiber";
 import { Text3D, Center, Float } from "@react-three/drei";
-import fontFace from "../Rescources/Poppins.json";
+import fontFace from "../Poppins.json";
 import { Color } from "three";
-import mail from "../Rescources/Mail.webp";
+import mail from "/Mail.webp";
 import { Link } from "react-router-dom";
 
 const Contact = () => {

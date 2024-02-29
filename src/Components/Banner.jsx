@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Sparkles from "./Sparkles";
 import { useInView, motion, useAnimation } from "framer-motion";
 import { FaPaintBrush } from "react-icons/fa";
-import me from "../Rescources/Me.png";
+import me from "/Me.png";
 import { TfiAngleDown } from "react-icons/tfi";
 
 const Banner = () => {

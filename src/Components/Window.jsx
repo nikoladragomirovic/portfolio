@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Banner from "./Banner";
 import Contact from "./Contact";
-import frame from "../Rescources/Window.gif";
+import frame from "/Window.gif";
 import ScrollCycleComponent from "./ScrollCycleComponent";
 
 const Window = () => {
