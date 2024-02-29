@@ -52,7 +52,7 @@ const Contact = () => {
           <input
             key={comebackKey}
             placeholder="Your e-mail address"
-            className={`w-full py-[1.5vh] animate__animated rounded-xl z-30 bg-indigo-300 bg-opacity-35 duration-500 outline px-3 outline-1 outline-indigo-200 placeholder-indigo-400 font-poppins text-indigo-600  ${
+            className={`w-full py-[1.5vh] animate__animated rounded-xl font-light z-30 bg-indigo-300 bg-opacity-35 duration-500 outline px-3 outline-1 outline-indigo-200 placeholder-indigo-400 font-poppins text-indigo-600  ${
               animateSend
                 ? "animate__bounceOutRight animate-delay-1000"
                 : "animate__bounceInLeft animate-delay-[600ms]"
@@ -75,7 +75,7 @@ const Contact = () => {
           />
         </div>
         <p
-          className={`text-indigo-500 duration-300 text-light font-light text-xl ${
+          className={`text-indigo-500 duration-300 font-extralight text-xl ${
             animateSend
               ? "opacity-100 delay-[1400ms] translate-y-36"
               : "opacity-0"
@@ -87,14 +87,14 @@ const Contact = () => {
           placeholder="Your message"
           key={comebackKey}
           readOnly={animateSend}
-          className={`w-7/12 pb-[25vh] animate__animated duration-500 rounded-2xl outline z-10 p-3 resize-none outline-1 placeholder-indigo-400 outline-indigo-200 font-poppins text-indigo-600 bg-indigo-300 bg-opacity-30 ${
+          className={`w-7/12 pb-[25vh] font-light animate__animated duration-500 rounded-2xl outline z-10 p-3 resize-none outline-1 placeholder-indigo-400 outline-indigo-200 font-poppins text-indigo-600 bg-indigo-300 bg-opacity-30 ${
             animateSend
               ? "animate__zoomOutUp -mt-7 mb-7"
               : "animate__zoomInDown animate-delay-[1000ms]"
           }`}
         ></textarea>
         <div className="flex w-full flex-row items-center justify-center mt-[2%]">
-          <h1 className="text-3xl font-poppins font-bold text-indigo-400 mx-20 animate__animated animate__zoomInDown animate-delay-[1200ms] tracking-wider">
+          <h1 className="text-3xl font-poppins font-medium text-indigo-400 mx-20 animate__animated animate__zoomInDown animate-delay-[1200ms] tracking-wider">
             SOCIALS
           </h1>
           <div className="animate__animated animate__zoomInDown animate-delay-[1400ms] flex">

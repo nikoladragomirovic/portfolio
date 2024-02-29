@@ -40,7 +40,7 @@ const showcasesData = [
 
 const ScrollCycleComponent = () => {
   const [currentShowcaseIndex, setCurrentShowcaseIndex] = useState(0);
-  const [keyIndex, setKeyIndex] = useState(0);
+  const [keyIndex, setKeyIndex] = useState(1);
 
   const handleKeyDown = (event) => {
     if (event.code === "ArrowDown") {
