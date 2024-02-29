@@ -43,7 +43,7 @@ const Showcase = ({ name, imgSrc, description, link }) => {
           className="group relative hover:rotate-[4deg] duration-500 p-8 rounded-2xl bg-indigo-300 bg-opacity-30 outline-indigo-200 outline outline-1"
         >
           <img
-            className="max-w-[30rem] rounded-xl outline outline-indigo-50 outline-1 group-hover:rotate-[-10deg] duration-500 group-hover:-translate-x-6 group-hover:scale-105 group-hover:-translate-y-2"
+            className="max-w-[25rem] min-w-[25rem] min-h-[15rem] rounded-xl outline outline-indigo-50 outline-1 group-hover:rotate-[-10deg] duration-500 group-hover:-translate-x-6 group-hover:scale-105 group-hover:-translate-y-2"
             src={imgSrc}
             alt={name}
           ></img>

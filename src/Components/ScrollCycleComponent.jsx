@@ -6,6 +6,7 @@ import rentasound from "../Rescources/Rent A Sound.jpeg";
 import trenirai from "../Rescources/Trenirai.jpeg";
 import flowmodoro from "../Rescources/Flowmodoro.jpg";
 import ArrowIndicator from "./ArrowIndicator";
+import toolstack from "../Rescources/ToolStack.png";
 
 const showcasesData = [
   {
@@ -36,7 +37,16 @@ const showcasesData = [
       "Electron pomodoro timer application that respects the flow state (adjusts rest based on time spent working).",
     link: "https://github.com/nikoladragomirovic/flowmodoro",
   },
+  {
+    name: "TOOL STACK",
+    imgSrc: toolstack,
+    description:
+      "Web developer toolbox app that supports stacking outputs and advanced drag and drop",
+    link: "https://tool-stack.vercel.app",
+  },
 ];
+
+const placeholderImage = "";
 
 const ScrollCycleComponent = () => {
   const [currentShowcaseIndex, setCurrentShowcaseIndex] = useState(0);
@@ -52,6 +62,7 @@ const ScrollCycleComponent = () => {
         (prevIndex) =>
           (prevIndex - 1 + showcasesData.length) % showcasesData.length
       );
+      currentShowcaseIndex;
     }
 
     setKeyIndex(currentShowcaseIndex);
