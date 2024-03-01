@@ -74,21 +74,25 @@ const Wheel = ({ windowWidth }) => {
       ref={containerRef}
       className="min-w-full overflow-x-scroll z-10 my-36 flex flex-row snap-x scroll-smooth"
     >
-      {projects.map((project) => (
+      {projects.map((project, index) => (
         <div
           key={project.title}
           className="flex flex-col text-center items-center justify-start min-w-full sm:px-40 px-14 py-5 snap-center"
         >
           <div className="flex mb-10 flex-row w-full items-center justify-center">
             <BiSolidLeftArrow
-              className="text-indigo-300 shrink-0 z-20 size-7 cursor-pointer"
+              className={`text-indigo-300 shrink-0 z-20 size-6 cursor-pointer ${
+                index == 0 ? "hidden" : ""
+              }`}
               onClick={() => scrollTo(-windowWidth)}
             />
             <p className="font-poppins font-bold text-3xl px-6 text-indigo-400">
               {project.title}
             </p>
             <BiSolidRightArrow
-              className="shrink-0 z-10 text-indigo-300 size-7 cursor-pointer"
+              className={`text-indigo-300 shrink-0 z-20 size-6 cursor-pointer ${
+                index == projects.length - 1 ? "hidden" : ""
+              }`}
               onClick={() => scrollTo(windowWidth)}
             />
           </div>
