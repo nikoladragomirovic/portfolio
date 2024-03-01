@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import cokolada from "/Cokolada.webp";
 import flowmodoro from "/Flowmodoro.webp";
 import rentasound from "/Rent a Sound.webp";
@@ -15,6 +15,7 @@ import {
 import { SiTailwindcss } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 import { IoLogoElectron, IoLogoFirebase } from "react-icons/io5";
+import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
 
 const projects = [
   {
@@ -54,47 +55,66 @@ const projects = [
     title: "Trenirai",
     link: "https://github.com/nikoladragomirovic/trenir-ai",
     description:
-      "Web frontend concept application for an AI workout plan assisant, made using vanilla javascript, html, css.",
+      "Web frontend concept application for an AI workout plan assistant, made using vanilla javascript, html, css.",
     tech: [IoLogoJavascript, FaHtml5, FaCss3Alt],
   },
 ];
 
-const Wheel = () => {
+const Wheel = ({ windowWidth }) => {
+  const containerRef = useRef(null);
+
+  const scrollTo = (scrollOffset) => {
+    if (containerRef.current) {
+      containerRef.current.scrollLeft += scrollOffset;
+    }
+  };
+
   return (
-    <div className="my-36 min-w-full overflow-x-scroll flex flex-row snap-x">
-      {projects.map((project, index) => (
-        <Link
-          key={project.title}
-          to={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex flex-col items-center justify-start min-w-full sm:px-40 px-14 py-5 snap-center"
-        >
-          <p className="mb-10 font-poppins font-bold text-4xl text-indigo-400">
-            {project.title}
-          </p>
-          <img
-            src={project.image}
-            className={`rounded-3xl border-2 border-indigo-200 animate-pulse animate-duration-[3000ms] animate-delay-${
-              index * 100
-            }`}
-            alt={project.title}
-          />
-          <div className="w-full flex flex-row mt-10 items-center justify-evenly">
-            {project.tech.map((Icon, index) => (
-              <div
-                key={index}
-                className="mr-4 text-indigo-400 text-2xl p-2 rounded-lg bg-indigo-300 bg-opacity-30 outline outline-1 outline-indigo-200"
-              >
-                <Icon />
-              </div>
-            ))}
+    <div className="flex flex-row my-36 relative">
+      <BiSolidLeftArrow
+        className="absolute top-1/3 left-2 text-indigo-400 z-20 size-7 sm:left-10 sm:size-12 cursor-pointer"
+        onClick={() => scrollTo(-windowWidth)}
+      />
+      <div
+        ref={containerRef}
+        className="min-w-full overflow-x-scroll z-10 flex flex-row snap-x scroll-smooth"
+      >
+        {projects.map((project) => (
+          <div
+            key={project.title}
+            className="flex flex-col text-center items-center justify-start min-w-full sm:px-40 px-14 py-5 snap-center"
+          >
+            <p className="mb-10 font-poppins font-bold text-4xl text-indigo-400">
+              {project.title}
+            </p>
+            <Link to={project.link} target="_blank" rel="noopener noreferrer">
+              <img
+                src={project.image}
+                className="rounded-3xl border-2 border-indigo-200"
+                alt={project.title}
+              />
+            </Link>
+
+            <div className="w-full flex flex-row mt-10 items-center justify-evenly">
+              {project.tech.map((Icon, index) => (
+                <div
+                  key={index}
+                  className="mr-4 text-indigo-400 text-2xl p-2 rounded-lg bg-indigo-300 bg-opacity-30 outline outline-1 outline-indigo-200"
+                >
+                  <Icon />
+                </div>
+              ))}
+            </div>
+            <p className="mt-10 text-center font-poppins font-light text-base text-indigo-500">
+              {project.description}
+            </p>
           </div>
-          <p className="mt-10 text-center font-poppins font-light text-base text-indigo-500">
-            {project.description}
-          </p>
-        </Link>
-      ))}
+        ))}
+      </div>
+      <BiSolidRightArrow
+        className="shrink-0 absolute top-1/3 right-2 z-10 text-indigo-400 size-7 sm:right-10 sm:size-12 cursor-pointer"
+        onClick={() => scrollTo(windowWidth)}
+      />
     </div>
   );
 };

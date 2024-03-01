@@ -16,7 +16,7 @@ const Socials = () => {
   return (
     <div className="w-full flex flex-col items-center">
       <p className="font-rubikMaps text-4xl text-indigo-400">Socials</p>
-      <div className="flex flex-row w-full justify-evenly items-center px-10 mt-10 mb-20">
+      <div className="flex flex-row w-full justify-evenly items-center px-10 mt-10 mb-32">
         <div className="animate__animated animate__zoomInDown animate-delay-[1400ms] flex">
           <Link
             to="https://github.com/nikoladragomirovic"

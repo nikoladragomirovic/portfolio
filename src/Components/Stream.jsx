@@ -3,11 +3,11 @@ import Intro from "./Intro";
 import Wheel from "./Wheel";
 import Socials from "./Socials";
 
-const Stream = () => {
+const Stream = ({ windowWidth }) => {
   return (
     <>
       <Intro />
-      <Wheel />
+      <Wheel windowWidth={windowWidth} />
       <Socials />
     </>
   );

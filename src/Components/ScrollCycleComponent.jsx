@@ -61,8 +61,6 @@ const showcasesData = [
   },
 ];
 
-const placeholderImage = "";
-
 const ScrollCycleComponent = () => {
   const [currentShowcaseIndex, setCurrentShowcaseIndex] = useState(0);
   const [keyIndex, setKeyIndex] = useState(1);

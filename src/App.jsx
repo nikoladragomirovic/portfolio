@@ -18,7 +18,7 @@ const App = () => {
   }, []);
 
   if (windowWidth < 1075) {
-    return <Stream />;
+    return <Stream windowWidth={windowWidth} />;
   } else {
     return <Window />;
   }
