@@ -58,11 +58,8 @@ const Showcase = ({ name, imgSrc, description, link, icons }) => {
           </p>
           <div className="flex items-center mb-8 mt-6">
             {icons.map((Icon, index) => (
-              <div
-                key={index}
-                className="mr-2 p-2 bg-indigo-400 rounded-lg text-indigo-500 bg-opacity-15 border border-indigo-100 border-opacity-70"
-              >
-                <Icon size={24} />
+              <div key={index} className="mr-4 text-indigo-400">
+                <Icon size={32} />
               </div>
             ))}
           </div>
