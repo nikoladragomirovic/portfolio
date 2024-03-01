@@ -72,7 +72,7 @@ const Wheel = ({ windowWidth }) => {
   return (
     <div
       ref={containerRef}
-      className="min-w-full overflow-x-scroll z-10 my-36 flex flex-row snap-x scroll-smooth"
+      className="min-w-full overflow-x-scroll z-10 my-36 flex flex-row snap-x snap-mandatory scroll-smooth"
     >
       {projects.map((project, index) => (
         <div
