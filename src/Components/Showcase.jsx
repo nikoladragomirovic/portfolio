@@ -6,7 +6,7 @@ import { Color } from "three";
 import { PiArrowArcRightLight } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
-const Showcase = ({ name, imgSrc, description, link }) => {
+const Showcase = ({ name, imgSrc, description, link, icons }) => {
   return (
     <>
       <div className="w-full h-[80vh] absolute -mt-[16%]">
@@ -35,7 +35,7 @@ const Showcase = ({ name, imgSrc, description, link }) => {
           </Center>
         </Canvas>
       </div>
-      <div className="px-36 pt-[10%] w-full h-full flex flex-row items-center justify-between font-poppins">
+      <div className="px-36 pt-[10%] w-full h-full flex flex-row items-center justify-around font-poppins">
         <Link
           to={link}
           target="_blank"
@@ -53,9 +53,19 @@ const Showcase = ({ name, imgSrc, description, link }) => {
           </div>
         </Link>
         <div className="w-full flex flex-col items-start ml-10 px-8 bg-indigo-300 bg-opacity-30 rounded-xl outline outline-1 outline-indigo-200 z-50">
-          <p className="text-md h-full font-light text-indigo-700 my-[10%]">
+          <p className="text-md h-full font-light text-indigo-700 mt-8">
             {description}
           </p>
+          <div className="flex items-center mb-8 mt-6">
+            {icons.map((Icon, index) => (
+              <div
+                key={index}
+                className="mr-2 p-2 bg-indigo-400 rounded-lg text-indigo-500 bg-opacity-15 border border-indigo-100 border-opacity-70"
+              >
+                <Icon size={24} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
