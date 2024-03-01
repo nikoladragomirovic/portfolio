@@ -21,7 +21,7 @@ import { TbBrandFramerMotion } from "react-icons/tb";
 
 const showcasesData = [
   {
-    name: "COKOLADA",
+    name: "ĆOKOLADA",
     imgSrc: cokolada,
     description:
       "Web portal made for a 48h hackaton challenge, backend written in Node.js, frontend done using React & TailwindCSS.",
@@ -29,7 +29,7 @@ const showcasesData = [
     tech: [IoLogoJavascript, FaReact, FaNodeJs, SiTailwindcss],
   },
   {
-    name: "RENT A SOUND",
+    name: "ZVUCNICI.COM",
     imgSrc: rentasound,
     description:
       "Web portal made for a small speaker rental business covering Novi Sad & Belgrade, you can view the catalogue with realtime information about taken speakers, and order.",

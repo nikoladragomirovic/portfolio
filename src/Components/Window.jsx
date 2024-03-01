@@ -9,38 +9,12 @@ import frame from "/Window.webp";
 import ScrollCycleComponent from "./ScrollCycleComponent";
 
 const Window = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const location = useLocation();
   const navigate = useNavigate();
   const [direction, setDirection] = useState(null);
   const [animateLeftArrow, setAnimateLeftArrow] = useState(false);
   const [animateRightArrow, setAnimateRightArrow] = useState(false);
   const [deviceType, setDeviceType] = useState(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    const userAgent = navigator.userAgent;
-    if (
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        userAgent
-      )
-    ) {
-      setDeviceType("mobile");
-    } else {
-      setDeviceType("desktop");
-    }
-  }, []);
 
   const pageWheel = {
     "left/": "/contact",
@@ -72,26 +46,6 @@ const Window = () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, [location.pathname]);
-
-  if (windowWidth < 1075)
-    return (
-      <motion.div
-        key="tip"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-        className={`font-light w-full h-screen flex items-center justify-center text-indigo-600 bg-indigo-50 ${
-          windowWidth < 1075 ? "" : "hidden"
-        } px-10`}
-      >
-        {`${
-          deviceType === "desktop"
-            ? "Increase screen width to get the full experience 😁"
-            : "Mobile version coming soon, for now visit the portfolio on desktop 😁"
-        }`}
-      </motion.div>
-    );
 
   return (
     <div className="w-full h-screen flex flex-row justify-between items-center px-3 py-6 bg-indigo-50">
