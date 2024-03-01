@@ -70,51 +70,51 @@ const Wheel = ({ windowWidth }) => {
   };
 
   return (
-    <div className="flex flex-row my-36 relative">
-      <BiSolidLeftArrow
-        className="absolute top-1/3 left-2 text-indigo-400 z-20 size-7 sm:left-10 sm:size-12 cursor-pointer"
-        onClick={() => scrollTo(-windowWidth)}
-      />
-      <div
-        ref={containerRef}
-        className="min-w-full overflow-x-scroll z-10 flex flex-row snap-x scroll-smooth"
-      >
-        {projects.map((project) => (
-          <div
-            key={project.title}
-            className="flex flex-col text-center items-center justify-start min-w-full sm:px-40 px-14 py-5 snap-center"
-          >
-            <p className="mb-10 font-poppins font-bold text-4xl text-indigo-400">
+    <div
+      ref={containerRef}
+      className="min-w-full overflow-x-hidden z-10 my-36 flex flex-row snap-x scroll-smooth"
+    >
+      {projects.map((project) => (
+        <div
+          key={project.title}
+          className="flex flex-col text-center items-center justify-start min-w-full sm:px-40 px-14 py-5 snap-center"
+        >
+          <div className="flex mb-10 flex-row w-full items-center justify-center">
+            <BiSolidLeftArrow
+              className="text-indigo-300 shrink-0 z-20 size-7 cursor-pointer"
+              onClick={() => scrollTo(-windowWidth)}
+            />
+            <p className="font-poppins font-bold text-3xl px-6 text-indigo-400">
               {project.title}
             </p>
-            <Link to={project.link} target="_blank" rel="noopener noreferrer">
-              <img
-                src={project.image}
-                className="rounded-3xl border-2 border-indigo-200"
-                alt={project.title}
-              />
-            </Link>
-
-            <div className="w-full flex flex-row mt-10 items-center justify-evenly">
-              {project.tech.map((Icon, index) => (
-                <div
-                  key={index}
-                  className="mr-4 text-indigo-400 text-2xl p-2 rounded-lg bg-indigo-300 bg-opacity-30 outline outline-1 outline-indigo-200"
-                >
-                  <Icon />
-                </div>
-              ))}
-            </div>
-            <p className="mt-10 text-center font-poppins font-light text-base text-indigo-500">
-              {project.description}
-            </p>
+            <BiSolidRightArrow
+              className="shrink-0 z-10 text-indigo-300 size-7 cursor-pointer"
+              onClick={() => scrollTo(windowWidth)}
+            />
           </div>
-        ))}
-      </div>
-      <BiSolidRightArrow
-        className="shrink-0 absolute top-1/3 right-2 z-10 text-indigo-400 size-7 sm:right-10 sm:size-12 cursor-pointer"
-        onClick={() => scrollTo(windowWidth)}
-      />
+          <Link to={project.link} target="_blank" rel="noopener noreferrer">
+            <img
+              src={project.image}
+              className="rounded-3xl border-2 border-indigo-200"
+              alt={project.title}
+            />
+          </Link>
+
+          <div className="w-full flex flex-row mt-10 items-center justify-evenly">
+            {project.tech.map((Icon, index) => (
+              <div
+                key={index}
+                className="mx-2 text-indigo-400 text-2xl p-2 rounded-lg bg-indigo-300 bg-opacity-30 outline outline-1 outline-indigo-200"
+              >
+                <Icon />
+              </div>
+            ))}
+          </div>
+          <p className="mt-10 text-center font-poppins font-light text-base text-indigo-500">
+            {project.description}
+          </p>
+        </div>
+      ))}
     </div>
   );
 };

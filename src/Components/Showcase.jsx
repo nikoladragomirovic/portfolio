@@ -35,7 +35,7 @@ const Showcase = ({ name, imgSrc, description, link, icons }) => {
           </Center>
         </Canvas>
       </div>
-      <div className="px-36 pt-[10%] w-full h-full flex flex-row items-center justify-around font-poppins">
+      <div className="px-10 xl:px-36 pt-[10%] w-full h-full flex flex-row items-center justify-around font-poppins">
         <Link
           to={link}
           target="_blank"
@@ -52,14 +52,17 @@ const Showcase = ({ name, imgSrc, description, link, icons }) => {
             <PiArrowArcRightLight />
           </div>
         </Link>
-        <div className="w-full flex flex-col items-start ml-10 px-8 bg-indigo-300 bg-opacity-30 rounded-xl outline outline-1 outline-indigo-200 z-50">
-          <p className="text-md h-full font-light text-indigo-700 mt-8">
+        <div className="w-full flex flex-col items-start ml-10 z-50">
+          <p className="text-md h-full font-light text-indigo-700 py-8 px-8 rounded-xl outline outline-1 outline-indigo-200 bg-indigo-300 bg-opacity-30">
             {description}
           </p>
-          <div className="flex items-center mb-8 mt-6">
+          <div className="flex items-center mt-6">
             {icons.map((Icon, index) => (
-              <div key={index} className="mr-4 text-indigo-400">
-                <Icon size={32} />
+              <div
+                key={index}
+                className="mx-4 text-indigo-400 text-3xl p-2 rounded-lg bg-indigo-300 bg-opacity-30 outline outline-1 outline-indigo-200"
+              >
+                <Icon />
               </div>
             ))}
           </div>
