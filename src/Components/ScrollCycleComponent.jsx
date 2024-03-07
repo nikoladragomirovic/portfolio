@@ -64,21 +64,27 @@ const showcasesData = [
 const ScrollCycleComponent = () => {
   const [currentShowcaseIndex, setCurrentShowcaseIndex] = useState(0);
   const [keyIndex, setKeyIndex] = useState(1);
+  const [direction, setDirection] = useState(0);
 
   const handleKeyDown = (event) => {
     if (event.code === "ArrowDown") {
-      setCurrentShowcaseIndex(
-        (prevIndex) => (prevIndex + 1) % showcasesData.length
-      );
+      setDirection(0);
+      setTimeout(() => {
+        setCurrentShowcaseIndex(
+          (prevIndex) => (prevIndex + 1) % showcasesData.length
+        );
+        setKeyIndex(currentShowcaseIndex);
+      }, 0);
     } else if (event.code === "ArrowUp") {
-      setCurrentShowcaseIndex(
-        (prevIndex) =>
-          (prevIndex - 1 + showcasesData.length) % showcasesData.length
-      );
-      currentShowcaseIndex;
+      setDirection(1);
+      setTimeout(() => {
+        setCurrentShowcaseIndex(
+          (prevIndex) =>
+            (prevIndex - 1 + showcasesData.length) % showcasesData.length
+        );
+        setKeyIndex(currentShowcaseIndex);
+      }, 0);
     }
-
-    setKeyIndex(currentShowcaseIndex);
   };
 
   useEffect(() => {
@@ -97,15 +103,15 @@ const ScrollCycleComponent = () => {
         className="w-full h-[82vh] flex items-center flex-col justify-start"
         key={keyIndex}
         initial={{
-          opacity: 0,
+          y: direction ? "100%" : "-100%",
         }}
         animate={{
-          opacity: 100,
+          y: 0,
         }}
         exit={{
-          opacity: 0,
+          y: direction ? "-100%" : "100%",
         }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.5 }}
       >
         <Showcase
           name={currentShowcase.name}
