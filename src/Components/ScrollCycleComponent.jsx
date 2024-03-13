@@ -32,7 +32,7 @@ const showcasesData = [
     imgSrc: rentasound,
     description:
       "Web portal made for a small speaker rental business covering Novi Sad & Belgrade, you can view the catalogue with realtime information about taken speakers, and order.",
-    link: "https://nikoladragomirovic.github.io/rent-a-sound/",
+    link: "https://zvucnici.com",
     tech: [FaReact, FaPython, SiTailwindcss],
   },
   {
