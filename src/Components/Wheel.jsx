@@ -4,6 +4,7 @@ import flowmodoro from "/Flowmodoro.webp";
 import rentasound from "/Rent a Sound.webp";
 import toolstack from "/ToolStack.webp";
 import trenirai from "/Trenirai.webp";
+import delivery from "/Delivery Detective.webp";
 import { Link } from "react-router-dom";
 import {
   FaNodeJs,
@@ -16,24 +17,9 @@ import { SiTailwindcss } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 import { IoLogoElectron, IoLogoFirebase } from "react-icons/io5";
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi";
+import { BiLogoMongodb } from "react-icons/bi";
 
 const projects = [
-  {
-    image: cokolada,
-    title: "Ćokolada",
-    link: "https://github.com/nikoladragomirovic/cokolada",
-    description:
-      "Web portal made for a 48h hackaton challenge, backend written in Node.js, frontend done using React & TailwindCSS.",
-    tech: [FaReact, FaNodeJs, SiTailwindcss],
-  },
-  {
-    image: flowmodoro,
-    title: "Flowmodoro",
-    link: "https://github.com/nikoladragomirovic/flowmodoro",
-    description:
-      "Electron pomodoro timer application that respects the flow state (adjusts rest based on time spent working).",
-    tech: [, IoLogoElectron, FaHtml5, FaCss3Alt],
-  },
   {
     image: rentasound,
     title: "zvucnici.com",
@@ -49,6 +35,30 @@ const projects = [
     description:
       "Web developer toolbox app that supports stacking outputs and advanced drag and drop",
     tech: [FaReact, IoLogoFirebase, SiTailwindcss],
+  },
+  {
+    title: "Delivery Detective",
+    image: delivery,
+    description:
+      "A web app that compares prices of the most popular delivery services in Novi Sad using their API, with user authentication",
+    link: "https://github.com/nikoladragomirovic/delivery_detective",
+    tech: [FaReact, FaPython, BiLogoMongodb],
+  },
+  {
+    image: cokolada,
+    title: "Ćokolada",
+    link: "https://github.com/nikoladragomirovic/cokolada",
+    description:
+      "Web portal made for a 48h hackaton challenge, backend written in Node.js, frontend done using React & TailwindCSS.",
+    tech: [FaReact, FaNodeJs, SiTailwindcss],
+  },
+  {
+    image: flowmodoro,
+    title: "Flowmodoro",
+    link: "https://github.com/nikoladragomirovic/flowmodoro",
+    description:
+      "Electron pomodoro timer application that respects the flow state (adjusts rest based on time spent working).",
+    tech: [, IoLogoElectron, FaHtml5, FaCss3Alt],
   },
   {
     image: trenirai,

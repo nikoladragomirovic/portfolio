@@ -7,6 +7,9 @@ import trenirai from "/Trenirai.webp";
 import flowmodoro from "/Flowmodoro.webp";
 import ArrowIndicator from "./ArrowIndicator";
 import toolstack from "/ToolStack.webp";
+import delivery from "/Delivery Detective.webp";
+import { BiLogoMongodb } from "react-icons/bi";
+
 import {
   FaNodeJs,
   FaReact,
@@ -20,14 +23,6 @@ import { IoLogoElectron, IoLogoFirebase } from "react-icons/io5";
 
 const showcasesData = [
   {
-    name: "ĆOKOLADA",
-    imgSrc: cokolada,
-    description:
-      "Web portal made for a 48h hackaton challenge, backend written in Node.js, frontend done using React & TailwindCSS.",
-    link: "https://github.com/nikoladragomirovic/cokolada",
-    tech: [FaReact, FaNodeJs, SiTailwindcss],
-  },
-  {
     name: "ZVUCNICI.COM",
     imgSrc: rentasound,
     description:
@@ -36,20 +31,12 @@ const showcasesData = [
     tech: [FaReact, FaPython, SiTailwindcss],
   },
   {
-    name: "TRENIRAI",
-    imgSrc: trenirai,
+    name: "DELIVERY DETECTIVE",
+    imgSrc: delivery,
     description:
-      "Web frontend concept application for an AI workout plan assisant, made using vanilla javascript, html, css.",
-    link: "https://github.com/nikoladragomirovic/trenir-ai",
-    tech: [IoLogoJavascript, FaHtml5, FaCss3Alt],
-  },
-  {
-    name: "FLOWMODORO",
-    imgSrc: flowmodoro,
-    description:
-      "Electron pomodoro timer application that respects the flow state (adjusts rest based on time spent working).",
-    link: "https://github.com/nikoladragomirovic/flowmodoro",
-    tech: [, IoLogoElectron, FaHtml5, FaCss3Alt],
+      "A web app that compares prices of the most popular delivery services in Novi Sad using their API, with user authentication",
+    link: "https://github.com/nikoladragomirovic/delivery_detective",
+    tech: [FaReact, FaPython, BiLogoMongodb],
   },
   {
     name: "TOOL STACK",
@@ -58,6 +45,30 @@ const showcasesData = [
       "Web developer toolbox app that supports stacking outputs and advanced drag and drop",
     link: "https://tool-stack.vercel.app",
     tech: [FaReact, IoLogoFirebase, SiTailwindcss],
+  },
+  {
+    name: "ĆOKOLADA",
+    imgSrc: cokolada,
+    description:
+      "Web portal made for a 48h hackaton challenge, backend written in Node.js, frontend done using React & TailwindCSS.",
+    link: "https://github.com/nikoladragomirovic/cokolada",
+    tech: [FaReact, FaNodeJs, SiTailwindcss],
+  },
+  {
+    name: "FLOWMODORO",
+    imgSrc: flowmodoro,
+    description:
+      "Electron pomodoro timer application that respects the flow state (adjusts rest based on time spent working).",
+    link: "https://github.com/nikoladragomirovic/flowmodoro",
+    tech: [IoLogoElectron, FaHtml5, FaCss3Alt],
+  },
+  {
+    name: "TRENIRAI",
+    imgSrc: trenirai,
+    description:
+      "Web frontend concept application for an AI workout plan assisant, made using vanilla javascript, html, css.",
+    link: "https://github.com/nikoladragomirovic/trenir-ai",
+    tech: [IoLogoJavascript, FaHtml5, FaCss3Alt],
   },
 ];
 
